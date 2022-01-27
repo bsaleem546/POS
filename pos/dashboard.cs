@@ -81,5 +81,10 @@ namespace pos
             login l = new login();
             l.Show();
         }
+
+        private void inventory_btn_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Inventory());
+        }
     }
 }

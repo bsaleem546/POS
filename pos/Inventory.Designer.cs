@@ -29,7 +29,21 @@
         private void InitializeComponent()
         {
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.GRID_PRODUCTS = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.PRODUCT_SEARCH = new System.Windows.Forms.TextBox();
+            this.PRODUCT_RESET = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.PRODUCT_DELETE = new System.Windows.Forms.Button();
+            this.PRODUCT_CATE = new System.Windows.Forms.ComboBox();
+            this.PRODUCT_UPDATE = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.PRODUCT_SAVE = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.PRODUCT_PRICE = new System.Windows.Forms.TextBox();
+            this.PRODUCT_BRANDS = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.PRODUCT_NAME = new System.Windows.Forms.TextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -56,38 +70,26 @@
             this.CAT_RESET = new System.Windows.Forms.Button();
             this.CAT_SAVE = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.PRODUCT_BRANDS = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.PRODUCT_CATE = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.PRODUCT_PRICE = new System.Windows.Forms.TextBox();
-            this.PRODUCT_RESET = new System.Windows.Forms.Button();
-            this.PRODUCT_DELETE = new System.Windows.Forms.Button();
-            this.PRODUCT_UPDATE = new System.Windows.Forms.Button();
-            this.PRODUCT_SAVE = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.PRODUCT_SEARCH = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.GRID_PRODUCTS = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.GRID_INV = new System.Windows.Forms.DataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.INV_PRODUCT = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.INV_QUANTITY = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.INV_BUYING = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.INV_TOTAL = new System.Windows.Forms.TextBox();
-            this.INV_RESET = new System.Windows.Forms.Button();
-            this.INV_DELETE = new System.Windows.Forms.Button();
-            this.INV_UPDATE = new System.Windows.Forms.Button();
-            this.INV_SAVE = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.INV_SEARCH = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.INV_RESET = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.INV_DELETE = new System.Windows.Forms.Button();
+            this.INV_TOTAL = new System.Windows.Forms.TextBox();
+            this.INV_UPDATE = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.INV_SAVE = new System.Windows.Forms.Button();
+            this.INV_BUYING = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.INV_QUANTITY = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.INV_PRODUCT = new System.Windows.Forms.ComboBox();
             this.tabPage2.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GRID_PRODUCTS)).BeginInit();
             this.panel1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -95,11 +97,9 @@
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GRID_CAT)).BeginInit();
             this.tabControl1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GRID_PRODUCTS)).BeginInit();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GRID_INV)).BeginInit();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPage2
@@ -113,6 +113,26 @@
             this.tabPage2.Size = new System.Drawing.Size(1046, 660);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Products";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.GRID_PRODUCTS);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(3, 180);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1040, 477);
+            this.panel2.TabIndex = 1;
+            // 
+            // GRID_PRODUCTS
+            // 
+            this.GRID_PRODUCTS.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.GRID_PRODUCTS.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.GRID_PRODUCTS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GRID_PRODUCTS.Location = new System.Drawing.Point(5, 6);
+            this.GRID_PRODUCTS.Name = "GRID_PRODUCTS";
+            this.GRID_PRODUCTS.Size = new System.Drawing.Size(1030, 466);
+            this.GRID_PRODUCTS.TabIndex = 1;
+            this.GRID_PRODUCTS.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GRID_PRODUCTS_CellClick);
             // 
             // panel1
             // 
@@ -135,6 +155,161 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1040, 177);
             this.panel1.TabIndex = 0;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.label5.Location = new System.Drawing.Point(767, 93);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(69, 25);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Search";
+            // 
+            // PRODUCT_SEARCH
+            // 
+            this.PRODUCT_SEARCH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.PRODUCT_SEARCH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PRODUCT_SEARCH.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PRODUCT_SEARCH.ForeColor = System.Drawing.Color.White;
+            this.PRODUCT_SEARCH.Location = new System.Drawing.Point(772, 127);
+            this.PRODUCT_SEARCH.Multiline = true;
+            this.PRODUCT_SEARCH.Name = "PRODUCT_SEARCH";
+            this.PRODUCT_SEARCH.Size = new System.Drawing.Size(260, 36);
+            this.PRODUCT_SEARCH.TabIndex = 8;
+            this.PRODUCT_SEARCH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PRODUCT_SEARCH_KeyPress);
+            // 
+            // PRODUCT_RESET
+            // 
+            this.PRODUCT_RESET.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.PRODUCT_RESET.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.PRODUCT_RESET.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PRODUCT_RESET.ForeColor = System.Drawing.Color.White;
+            this.PRODUCT_RESET.Location = new System.Drawing.Point(646, 107);
+            this.PRODUCT_RESET.Name = "PRODUCT_RESET";
+            this.PRODUCT_RESET.Size = new System.Drawing.Size(96, 45);
+            this.PRODUCT_RESET.TabIndex = 7;
+            this.PRODUCT_RESET.Text = "Reset";
+            this.PRODUCT_RESET.UseVisualStyleBackColor = false;
+            this.PRODUCT_RESET.Click += new System.EventHandler(this.PRODUCT_RESET_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.label2.Location = new System.Drawing.Point(5, 93);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(89, 25);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Sell Price";
+            // 
+            // PRODUCT_DELETE
+            // 
+            this.PRODUCT_DELETE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.PRODUCT_DELETE.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.PRODUCT_DELETE.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PRODUCT_DELETE.ForeColor = System.Drawing.Color.White;
+            this.PRODUCT_DELETE.Location = new System.Drawing.Point(646, 56);
+            this.PRODUCT_DELETE.Name = "PRODUCT_DELETE";
+            this.PRODUCT_DELETE.Size = new System.Drawing.Size(96, 45);
+            this.PRODUCT_DELETE.TabIndex = 6;
+            this.PRODUCT_DELETE.Text = "Delete";
+            this.PRODUCT_DELETE.UseVisualStyleBackColor = false;
+            this.PRODUCT_DELETE.Click += new System.EventHandler(this.PRODUCT_DELETE_Click);
+            // 
+            // PRODUCT_CATE
+            // 
+            this.PRODUCT_CATE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.PRODUCT_CATE.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.PRODUCT_CATE.ForeColor = System.Drawing.Color.White;
+            this.PRODUCT_CATE.FormattingEnabled = true;
+            this.PRODUCT_CATE.Items.AddRange(new object[] {
+            "ADMIN",
+            "MANAGER",
+            "CASHIER"});
+            this.PRODUCT_CATE.Location = new System.Drawing.Point(287, 127);
+            this.PRODUCT_CATE.Name = "PRODUCT_CATE";
+            this.PRODUCT_CATE.Size = new System.Drawing.Size(235, 33);
+            this.PRODUCT_CATE.TabIndex = 3;
+            // 
+            // PRODUCT_UPDATE
+            // 
+            this.PRODUCT_UPDATE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.PRODUCT_UPDATE.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.PRODUCT_UPDATE.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PRODUCT_UPDATE.ForeColor = System.Drawing.Color.White;
+            this.PRODUCT_UPDATE.Location = new System.Drawing.Point(539, 107);
+            this.PRODUCT_UPDATE.Name = "PRODUCT_UPDATE";
+            this.PRODUCT_UPDATE.Size = new System.Drawing.Size(96, 45);
+            this.PRODUCT_UPDATE.TabIndex = 5;
+            this.PRODUCT_UPDATE.Text = "Update";
+            this.PRODUCT_UPDATE.UseVisualStyleBackColor = false;
+            this.PRODUCT_UPDATE.Click += new System.EventHandler(this.PRODUCT_UPDATE_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.label4.Location = new System.Drawing.Point(282, 11);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(62, 25);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Brand";
+            // 
+            // PRODUCT_SAVE
+            // 
+            this.PRODUCT_SAVE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.PRODUCT_SAVE.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.PRODUCT_SAVE.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PRODUCT_SAVE.ForeColor = System.Drawing.Color.White;
+            this.PRODUCT_SAVE.Location = new System.Drawing.Point(539, 56);
+            this.PRODUCT_SAVE.Name = "PRODUCT_SAVE";
+            this.PRODUCT_SAVE.Size = new System.Drawing.Size(96, 45);
+            this.PRODUCT_SAVE.TabIndex = 4;
+            this.PRODUCT_SAVE.Text = "Save";
+            this.PRODUCT_SAVE.UseVisualStyleBackColor = false;
+            this.PRODUCT_SAVE.Click += new System.EventHandler(this.PRODUCT_SAVE_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.label1.Location = new System.Drawing.Point(282, 93);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(88, 25);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Category";
+            // 
+            // PRODUCT_PRICE
+            // 
+            this.PRODUCT_PRICE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.PRODUCT_PRICE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PRODUCT_PRICE.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PRODUCT_PRICE.ForeColor = System.Drawing.Color.White;
+            this.PRODUCT_PRICE.Location = new System.Drawing.Point(8, 127);
+            this.PRODUCT_PRICE.Multiline = true;
+            this.PRODUCT_PRICE.Name = "PRODUCT_PRICE";
+            this.PRODUCT_PRICE.Size = new System.Drawing.Size(235, 36);
+            this.PRODUCT_PRICE.TabIndex = 1;
+            // 
+            // PRODUCT_BRANDS
+            // 
+            this.PRODUCT_BRANDS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.PRODUCT_BRANDS.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.PRODUCT_BRANDS.ForeColor = System.Drawing.Color.White;
+            this.PRODUCT_BRANDS.FormattingEnabled = true;
+            this.PRODUCT_BRANDS.Items.AddRange(new object[] {
+            "ADMIN",
+            "MANAGER",
+            "CASHIER"});
+            this.PRODUCT_BRANDS.Location = new System.Drawing.Point(287, 45);
+            this.PRODUCT_BRANDS.Name = "PRODUCT_BRANDS";
+            this.PRODUCT_BRANDS.Size = new System.Drawing.Size(235, 33);
+            this.PRODUCT_BRANDS.TabIndex = 2;
             // 
             // label3
             // 
@@ -470,186 +645,12 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1054, 701);
             this.tabControl1.TabIndex = 0;
-            // 
-            // PRODUCT_BRANDS
-            // 
-            this.PRODUCT_BRANDS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.PRODUCT_BRANDS.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.PRODUCT_BRANDS.ForeColor = System.Drawing.Color.White;
-            this.PRODUCT_BRANDS.FormattingEnabled = true;
-            this.PRODUCT_BRANDS.Items.AddRange(new object[] {
-            "ADMIN",
-            "MANAGER",
-            "CASHIER"});
-            this.PRODUCT_BRANDS.Location = new System.Drawing.Point(287, 45);
-            this.PRODUCT_BRANDS.Name = "PRODUCT_BRANDS";
-            this.PRODUCT_BRANDS.Size = new System.Drawing.Size(235, 33);
-            this.PRODUCT_BRANDS.TabIndex = 2;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.label4.Location = new System.Drawing.Point(282, 11);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 25);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Brand";
-            // 
-            // PRODUCT_CATE
-            // 
-            this.PRODUCT_CATE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.PRODUCT_CATE.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.PRODUCT_CATE.ForeColor = System.Drawing.Color.White;
-            this.PRODUCT_CATE.FormattingEnabled = true;
-            this.PRODUCT_CATE.Items.AddRange(new object[] {
-            "ADMIN",
-            "MANAGER",
-            "CASHIER"});
-            this.PRODUCT_CATE.Location = new System.Drawing.Point(287, 127);
-            this.PRODUCT_CATE.Name = "PRODUCT_CATE";
-            this.PRODUCT_CATE.Size = new System.Drawing.Size(235, 33);
-            this.PRODUCT_CATE.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.label1.Location = new System.Drawing.Point(282, 93);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 25);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Category";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.label2.Location = new System.Drawing.Point(5, 93);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 25);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "Sell Price";
-            // 
-            // PRODUCT_PRICE
-            // 
-            this.PRODUCT_PRICE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.PRODUCT_PRICE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PRODUCT_PRICE.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PRODUCT_PRICE.ForeColor = System.Drawing.Color.White;
-            this.PRODUCT_PRICE.Location = new System.Drawing.Point(8, 127);
-            this.PRODUCT_PRICE.Multiline = true;
-            this.PRODUCT_PRICE.Name = "PRODUCT_PRICE";
-            this.PRODUCT_PRICE.Size = new System.Drawing.Size(235, 36);
-            this.PRODUCT_PRICE.TabIndex = 1;
-            // 
-            // PRODUCT_RESET
-            // 
-            this.PRODUCT_RESET.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.PRODUCT_RESET.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.PRODUCT_RESET.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PRODUCT_RESET.ForeColor = System.Drawing.Color.White;
-            this.PRODUCT_RESET.Location = new System.Drawing.Point(646, 107);
-            this.PRODUCT_RESET.Name = "PRODUCT_RESET";
-            this.PRODUCT_RESET.Size = new System.Drawing.Size(96, 45);
-            this.PRODUCT_RESET.TabIndex = 7;
-            this.PRODUCT_RESET.Text = "Reset";
-            this.PRODUCT_RESET.UseVisualStyleBackColor = false;
-            this.PRODUCT_RESET.Click += new System.EventHandler(this.PRODUCT_RESET_Click);
-            // 
-            // PRODUCT_DELETE
-            // 
-            this.PRODUCT_DELETE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.PRODUCT_DELETE.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.PRODUCT_DELETE.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PRODUCT_DELETE.ForeColor = System.Drawing.Color.White;
-            this.PRODUCT_DELETE.Location = new System.Drawing.Point(646, 56);
-            this.PRODUCT_DELETE.Name = "PRODUCT_DELETE";
-            this.PRODUCT_DELETE.Size = new System.Drawing.Size(96, 45);
-            this.PRODUCT_DELETE.TabIndex = 6;
-            this.PRODUCT_DELETE.Text = "Delete";
-            this.PRODUCT_DELETE.UseVisualStyleBackColor = false;
-            this.PRODUCT_DELETE.Click += new System.EventHandler(this.PRODUCT_DELETE_Click);
-            // 
-            // PRODUCT_UPDATE
-            // 
-            this.PRODUCT_UPDATE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.PRODUCT_UPDATE.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.PRODUCT_UPDATE.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PRODUCT_UPDATE.ForeColor = System.Drawing.Color.White;
-            this.PRODUCT_UPDATE.Location = new System.Drawing.Point(539, 107);
-            this.PRODUCT_UPDATE.Name = "PRODUCT_UPDATE";
-            this.PRODUCT_UPDATE.Size = new System.Drawing.Size(96, 45);
-            this.PRODUCT_UPDATE.TabIndex = 5;
-            this.PRODUCT_UPDATE.Text = "Update";
-            this.PRODUCT_UPDATE.UseVisualStyleBackColor = false;
-            this.PRODUCT_UPDATE.Click += new System.EventHandler(this.PRODUCT_UPDATE_Click);
-            // 
-            // PRODUCT_SAVE
-            // 
-            this.PRODUCT_SAVE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.PRODUCT_SAVE.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.PRODUCT_SAVE.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PRODUCT_SAVE.ForeColor = System.Drawing.Color.White;
-            this.PRODUCT_SAVE.Location = new System.Drawing.Point(539, 56);
-            this.PRODUCT_SAVE.Name = "PRODUCT_SAVE";
-            this.PRODUCT_SAVE.Size = new System.Drawing.Size(96, 45);
-            this.PRODUCT_SAVE.TabIndex = 4;
-            this.PRODUCT_SAVE.Text = "Save";
-            this.PRODUCT_SAVE.UseVisualStyleBackColor = false;
-            this.PRODUCT_SAVE.Click += new System.EventHandler(this.PRODUCT_SAVE_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.label5.Location = new System.Drawing.Point(767, 93);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 25);
-            this.label5.TabIndex = 19;
-            this.label5.Text = "Search";
-            // 
-            // PRODUCT_SEARCH
-            // 
-            this.PRODUCT_SEARCH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.PRODUCT_SEARCH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PRODUCT_SEARCH.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PRODUCT_SEARCH.ForeColor = System.Drawing.Color.White;
-            this.PRODUCT_SEARCH.Location = new System.Drawing.Point(772, 127);
-            this.PRODUCT_SEARCH.Multiline = true;
-            this.PRODUCT_SEARCH.Name = "PRODUCT_SEARCH";
-            this.PRODUCT_SEARCH.Size = new System.Drawing.Size(260, 36);
-            this.PRODUCT_SEARCH.TabIndex = 8;
-            this.PRODUCT_SEARCH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PRODUCT_SEARCH_KeyPress);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.GRID_PRODUCTS);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 180);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1040, 477);
-            this.panel2.TabIndex = 1;
-            // 
-            // GRID_PRODUCTS
-            // 
-            this.GRID_PRODUCTS.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.GRID_PRODUCTS.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.GRID_PRODUCTS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GRID_PRODUCTS.Location = new System.Drawing.Point(5, 6);
-            this.GRID_PRODUCTS.Name = "GRID_PRODUCTS";
-            this.GRID_PRODUCTS.Size = new System.Drawing.Size(1030, 466);
-            this.GRID_PRODUCTS.TabIndex = 1;
-            this.GRID_PRODUCTS.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GRID_PRODUCTS_CellClick);
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(255)))), ((int)(((byte)(235)))));
-            this.tabPage3.Controls.Add(this.dataGridView1);
+            this.tabPage3.Controls.Add(this.GRID_INV);
             this.tabPage3.Controls.Add(this.panel5);
             this.tabPage3.Location = new System.Drawing.Point(4, 37);
             this.tabPage3.Name = "tabPage3";
@@ -657,6 +658,16 @@
             this.tabPage3.Size = new System.Drawing.Size(1046, 660);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Inventory";
+            // 
+            // GRID_INV
+            // 
+            this.GRID_INV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.GRID_INV.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.GRID_INV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GRID_INV.Location = new System.Drawing.Point(13, 186);
+            this.GRID_INV.Name = "GRID_INV";
+            this.GRID_INV.Size = new System.Drawing.Size(1020, 471);
+            this.GRID_INV.TabIndex = 2;
             // 
             // panel5
             // 
@@ -679,6 +690,161 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1040, 177);
             this.panel5.TabIndex = 0;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.label16.Location = new System.Drawing.Point(765, 92);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(69, 25);
+            this.label16.TabIndex = 21;
+            this.label16.Text = "Search";
+            // 
+            // INV_SEARCH
+            // 
+            this.INV_SEARCH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.INV_SEARCH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.INV_SEARCH.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.INV_SEARCH.ForeColor = System.Drawing.Color.White;
+            this.INV_SEARCH.Location = new System.Drawing.Point(770, 126);
+            this.INV_SEARCH.Multiline = true;
+            this.INV_SEARCH.Name = "INV_SEARCH";
+            this.INV_SEARCH.Size = new System.Drawing.Size(260, 36);
+            this.INV_SEARCH.TabIndex = 7;
+            this.INV_SEARCH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.INV_SEARCH_KeyPress);
+            // 
+            // INV_RESET
+            // 
+            this.INV_RESET.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.INV_RESET.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.INV_RESET.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.INV_RESET.ForeColor = System.Drawing.Color.White;
+            this.INV_RESET.Location = new System.Drawing.Point(663, 109);
+            this.INV_RESET.Name = "INV_RESET";
+            this.INV_RESET.Size = new System.Drawing.Size(96, 45);
+            this.INV_RESET.TabIndex = 6;
+            this.INV_RESET.Text = "Reset";
+            this.INV_RESET.UseVisualStyleBackColor = false;
+            this.INV_RESET.Click += new System.EventHandler(this.INV_RESET_Click);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.label15.Location = new System.Drawing.Point(301, 92);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(52, 25);
+            this.label15.TabIndex = 23;
+            this.label15.Text = "Total";
+            // 
+            // INV_DELETE
+            // 
+            this.INV_DELETE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.INV_DELETE.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.INV_DELETE.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.INV_DELETE.ForeColor = System.Drawing.Color.White;
+            this.INV_DELETE.Location = new System.Drawing.Point(663, 58);
+            this.INV_DELETE.Name = "INV_DELETE";
+            this.INV_DELETE.Size = new System.Drawing.Size(96, 45);
+            this.INV_DELETE.TabIndex = 5;
+            this.INV_DELETE.Text = "Delete";
+            this.INV_DELETE.UseVisualStyleBackColor = false;
+            this.INV_DELETE.Click += new System.EventHandler(this.INV_DELETE_Click);
+            // 
+            // INV_TOTAL
+            // 
+            this.INV_TOTAL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.INV_TOTAL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.INV_TOTAL.Enabled = false;
+            this.INV_TOTAL.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.INV_TOTAL.ForeColor = System.Drawing.Color.White;
+            this.INV_TOTAL.Location = new System.Drawing.Point(304, 126);
+            this.INV_TOTAL.Multiline = true;
+            this.INV_TOTAL.Name = "INV_TOTAL";
+            this.INV_TOTAL.Size = new System.Drawing.Size(235, 36);
+            this.INV_TOTAL.TabIndex = 22;
+            this.INV_TOTAL.Text = "0";
+            // 
+            // INV_UPDATE
+            // 
+            this.INV_UPDATE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.INV_UPDATE.Enabled = false;
+            this.INV_UPDATE.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.INV_UPDATE.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.INV_UPDATE.ForeColor = System.Drawing.Color.White;
+            this.INV_UPDATE.Location = new System.Drawing.Point(556, 109);
+            this.INV_UPDATE.Name = "INV_UPDATE";
+            this.INV_UPDATE.Size = new System.Drawing.Size(96, 45);
+            this.INV_UPDATE.TabIndex = 4;
+            this.INV_UPDATE.Text = "Update";
+            this.INV_UPDATE.UseVisualStyleBackColor = false;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.label14.Location = new System.Drawing.Point(301, 11);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(117, 25);
+            this.label14.TabIndex = 21;
+            this.label14.Text = "Buying Price";
+            // 
+            // INV_SAVE
+            // 
+            this.INV_SAVE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.INV_SAVE.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.INV_SAVE.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.INV_SAVE.ForeColor = System.Drawing.Color.White;
+            this.INV_SAVE.Location = new System.Drawing.Point(556, 58);
+            this.INV_SAVE.Name = "INV_SAVE";
+            this.INV_SAVE.Size = new System.Drawing.Size(96, 45);
+            this.INV_SAVE.TabIndex = 3;
+            this.INV_SAVE.Text = "Save";
+            this.INV_SAVE.UseVisualStyleBackColor = false;
+            this.INV_SAVE.Click += new System.EventHandler(this.INV_SAVE_Click);
+            // 
+            // INV_BUYING
+            // 
+            this.INV_BUYING.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.INV_BUYING.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.INV_BUYING.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.INV_BUYING.ForeColor = System.Drawing.Color.White;
+            this.INV_BUYING.Location = new System.Drawing.Point(304, 45);
+            this.INV_BUYING.Multiline = true;
+            this.INV_BUYING.Name = "INV_BUYING";
+            this.INV_BUYING.Size = new System.Drawing.Size(235, 36);
+            this.INV_BUYING.TabIndex = 2;
+            this.INV_BUYING.Text = "0";
+            this.INV_BUYING.TextChanged += new System.EventHandler(this.INV_BUYING_TextChanged);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.label13.Location = new System.Drawing.Point(5, 92);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(84, 25);
+            this.label13.TabIndex = 19;
+            this.label13.Text = "Quantity";
+            // 
+            // INV_QUANTITY
+            // 
+            this.INV_QUANTITY.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.INV_QUANTITY.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.INV_QUANTITY.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.INV_QUANTITY.ForeColor = System.Drawing.Color.White;
+            this.INV_QUANTITY.Location = new System.Drawing.Point(8, 126);
+            this.INV_QUANTITY.Multiline = true;
+            this.INV_QUANTITY.Name = "INV_QUANTITY";
+            this.INV_QUANTITY.Size = new System.Drawing.Size(235, 36);
+            this.INV_QUANTITY.TabIndex = 1;
+            this.INV_QUANTITY.Text = "0";
+            this.INV_QUANTITY.TextChanged += new System.EventHandler(this.INV_QUANTITY_TextChanged);
             // 
             // label6
             // 
@@ -706,161 +872,6 @@
             this.INV_PRODUCT.Size = new System.Drawing.Size(235, 33);
             this.INV_PRODUCT.TabIndex = 0;
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.label13.Location = new System.Drawing.Point(5, 92);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(84, 25);
-            this.label13.TabIndex = 19;
-            this.label13.Text = "Quantity";
-            // 
-            // INV_QUANTITY
-            // 
-            this.INV_QUANTITY.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.INV_QUANTITY.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.INV_QUANTITY.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.INV_QUANTITY.ForeColor = System.Drawing.Color.White;
-            this.INV_QUANTITY.Location = new System.Drawing.Point(8, 126);
-            this.INV_QUANTITY.Multiline = true;
-            this.INV_QUANTITY.Name = "INV_QUANTITY";
-            this.INV_QUANTITY.Size = new System.Drawing.Size(235, 36);
-            this.INV_QUANTITY.TabIndex = 1;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.label14.Location = new System.Drawing.Point(301, 11);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(117, 25);
-            this.label14.TabIndex = 21;
-            this.label14.Text = "Buying Price";
-            // 
-            // INV_BUYING
-            // 
-            this.INV_BUYING.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.INV_BUYING.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.INV_BUYING.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.INV_BUYING.ForeColor = System.Drawing.Color.White;
-            this.INV_BUYING.Location = new System.Drawing.Point(304, 45);
-            this.INV_BUYING.Multiline = true;
-            this.INV_BUYING.Name = "INV_BUYING";
-            this.INV_BUYING.Size = new System.Drawing.Size(235, 36);
-            this.INV_BUYING.TabIndex = 2;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.label15.Location = new System.Drawing.Point(301, 92);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(52, 25);
-            this.label15.TabIndex = 23;
-            this.label15.Text = "Total";
-            // 
-            // INV_TOTAL
-            // 
-            this.INV_TOTAL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.INV_TOTAL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.INV_TOTAL.Enabled = false;
-            this.INV_TOTAL.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.INV_TOTAL.ForeColor = System.Drawing.Color.White;
-            this.INV_TOTAL.Location = new System.Drawing.Point(304, 126);
-            this.INV_TOTAL.Multiline = true;
-            this.INV_TOTAL.Name = "INV_TOTAL";
-            this.INV_TOTAL.Size = new System.Drawing.Size(235, 36);
-            this.INV_TOTAL.TabIndex = 22;
-            // 
-            // INV_RESET
-            // 
-            this.INV_RESET.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.INV_RESET.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.INV_RESET.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.INV_RESET.ForeColor = System.Drawing.Color.White;
-            this.INV_RESET.Location = new System.Drawing.Point(663, 109);
-            this.INV_RESET.Name = "INV_RESET";
-            this.INV_RESET.Size = new System.Drawing.Size(96, 45);
-            this.INV_RESET.TabIndex = 6;
-            this.INV_RESET.Text = "Reset";
-            this.INV_RESET.UseVisualStyleBackColor = false;
-            // 
-            // INV_DELETE
-            // 
-            this.INV_DELETE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.INV_DELETE.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.INV_DELETE.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.INV_DELETE.ForeColor = System.Drawing.Color.White;
-            this.INV_DELETE.Location = new System.Drawing.Point(663, 58);
-            this.INV_DELETE.Name = "INV_DELETE";
-            this.INV_DELETE.Size = new System.Drawing.Size(96, 45);
-            this.INV_DELETE.TabIndex = 5;
-            this.INV_DELETE.Text = "Delete";
-            this.INV_DELETE.UseVisualStyleBackColor = false;
-            // 
-            // INV_UPDATE
-            // 
-            this.INV_UPDATE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.INV_UPDATE.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.INV_UPDATE.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.INV_UPDATE.ForeColor = System.Drawing.Color.White;
-            this.INV_UPDATE.Location = new System.Drawing.Point(556, 109);
-            this.INV_UPDATE.Name = "INV_UPDATE";
-            this.INV_UPDATE.Size = new System.Drawing.Size(96, 45);
-            this.INV_UPDATE.TabIndex = 4;
-            this.INV_UPDATE.Text = "Update";
-            this.INV_UPDATE.UseVisualStyleBackColor = false;
-            // 
-            // INV_SAVE
-            // 
-            this.INV_SAVE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.INV_SAVE.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.INV_SAVE.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.INV_SAVE.ForeColor = System.Drawing.Color.White;
-            this.INV_SAVE.Location = new System.Drawing.Point(556, 58);
-            this.INV_SAVE.Name = "INV_SAVE";
-            this.INV_SAVE.Size = new System.Drawing.Size(96, 45);
-            this.INV_SAVE.TabIndex = 3;
-            this.INV_SAVE.Text = "Save";
-            this.INV_SAVE.UseVisualStyleBackColor = false;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.label16.Location = new System.Drawing.Point(765, 92);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(69, 25);
-            this.label16.TabIndex = 21;
-            this.label16.Text = "Search";
-            // 
-            // INV_SEARCH
-            // 
-            this.INV_SEARCH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.INV_SEARCH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.INV_SEARCH.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.INV_SEARCH.ForeColor = System.Drawing.Color.White;
-            this.INV_SEARCH.Location = new System.Drawing.Point(770, 126);
-            this.INV_SEARCH.Multiline = true;
-            this.INV_SEARCH.Name = "INV_SEARCH";
-            this.INV_SEARCH.Size = new System.Drawing.Size(260, 36);
-            this.INV_SEARCH.TabIndex = 7;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 186);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1020, 471);
-            this.dataGridView1.TabIndex = 2;
-            // 
             // Inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
@@ -874,6 +885,8 @@
             this.Name = "Inventory";
             this.Text = "Inventory";
             this.tabPage2.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.GRID_PRODUCTS)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabPage1.ResumeLayout(false);
@@ -884,12 +897,10 @@
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GRID_CAT)).EndInit();
             this.tabControl1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.GRID_PRODUCTS)).EndInit();
             this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.GRID_INV)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -954,6 +965,6 @@
         private System.Windows.Forms.TextBox INV_QUANTITY;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox INV_SEARCH;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView GRID_INV;
     }
 }

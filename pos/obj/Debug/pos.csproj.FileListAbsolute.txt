@@ -11,3 +11,4 @@ C:\Users\Pc\Desktop\POS DESKTOP\pos\pos\obj\Debug\pos.pdb
 C:\Users\Pc\Desktop\POS DESKTOP\pos\pos\obj\Debug\pos.dashboard.resources
 C:\Users\Pc\Desktop\POS DESKTOP\pos\pos\obj\Debug\pos.AllUsers.resources
 C:\Users\Pc\Desktop\POS DESKTOP\pos\pos\obj\Debug\pos.Inventory.resources
+C:\Users\Pc\Desktop\POS DESKTOP\pos\pos\obj\Debug\pos.Items.resources

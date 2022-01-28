@@ -86,5 +86,10 @@ namespace pos
         {
             OpenChildForm(new Inventory());
         }
+
+        private void items_btn_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Items());
+        }
     }
 }

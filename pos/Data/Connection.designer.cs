@@ -42,6 +42,9 @@ namespace pos.Data
     partial void InsertPRODUCT_TB(PRODUCT_TB instance);
     partial void UpdatePRODUCT_TB(PRODUCT_TB instance);
     partial void DeletePRODUCT_TB(PRODUCT_TB instance);
+    partial void InsertINVENTORY_TB(INVENTORY_TB instance);
+    partial void UpdateINVENTORY_TB(INVENTORY_TB instance);
+    partial void DeleteINVENTORY_TB(INVENTORY_TB instance);
     #endregion
 		
 		public ConnectionDataContext() : 
@@ -103,6 +106,14 @@ namespace pos.Data
 			get
 			{
 				return this.GetTable<PRODUCT_TB>();
+			}
+		}
+		
+		public System.Data.Linq.Table<INVENTORY_TB> INVENTORY_TBs
+		{
+			get
+			{
+				return this.GetTable<INVENTORY_TB>();
 			}
 		}
 	}
@@ -605,9 +616,15 @@ namespace pos.Data
 		
 		private System.Nullable<decimal> _SELL_PRICE;
 		
+		private System.Nullable<int> _QUANTITY;
+		
+		private System.Nullable<decimal> _TOTAL;
+		
 		private System.Nullable<System.DateTime> _CREATED_AT;
 		
 		private System.Nullable<bool> _STATUS;
+		
+		private EntitySet<INVENTORY_TB> _INVENTORY_TBs;
 		
 		private EntityRef<BRAND_TB> _BRAND_TB;
 		
@@ -627,6 +644,10 @@ namespace pos.Data
     partial void OnPRODUCTChanged();
     partial void OnSELL_PRICEChanging(System.Nullable<decimal> value);
     partial void OnSELL_PRICEChanged();
+    partial void OnQUANTITYChanging(System.Nullable<int> value);
+    partial void OnQUANTITYChanged();
+    partial void OnTOTALChanging(System.Nullable<decimal> value);
+    partial void OnTOTALChanged();
     partial void OnCREATED_ATChanging(System.Nullable<System.DateTime> value);
     partial void OnCREATED_ATChanged();
     partial void OnSTATUSChanging(System.Nullable<bool> value);
@@ -635,6 +656,7 @@ namespace pos.Data
 		
 		public PRODUCT_TB()
 		{
+			this._INVENTORY_TBs = new EntitySet<INVENTORY_TB>(new Action<INVENTORY_TB>(this.attach_INVENTORY_TBs), new Action<INVENTORY_TB>(this.detach_INVENTORY_TBs));
 			this._BRAND_TB = default(EntityRef<BRAND_TB>);
 			this._CATEGORY_TB = default(EntityRef<CATEGORY_TB>);
 			OnCreated();
@@ -748,6 +770,46 @@ namespace pos.Data
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QUANTITY", DbType="Int")]
+		public System.Nullable<int> QUANTITY
+		{
+			get
+			{
+				return this._QUANTITY;
+			}
+			set
+			{
+				if ((this._QUANTITY != value))
+				{
+					this.OnQUANTITYChanging(value);
+					this.SendPropertyChanging();
+					this._QUANTITY = value;
+					this.SendPropertyChanged("QUANTITY");
+					this.OnQUANTITYChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TOTAL", DbType="Decimal(18,0)")]
+		public System.Nullable<decimal> TOTAL
+		{
+			get
+			{
+				return this._TOTAL;
+			}
+			set
+			{
+				if ((this._TOTAL != value))
+				{
+					this.OnTOTALChanging(value);
+					this.SendPropertyChanging();
+					this._TOTAL = value;
+					this.SendPropertyChanged("TOTAL");
+					this.OnTOTALChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CREATED_AT", DbType="DateTime")]
 		public System.Nullable<System.DateTime> CREATED_AT
 		{
@@ -785,6 +847,19 @@ namespace pos.Data
 					this.SendPropertyChanged("STATUS");
 					this.OnSTATUSChanged();
 				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PRODUCT_TB_INVENTORY_TB", Storage="_INVENTORY_TBs", ThisKey="ID", OtherKey="PRODUCT_ID")]
+		public EntitySet<INVENTORY_TB> INVENTORY_TBs
+		{
+			get
+			{
+				return this._INVENTORY_TBs;
+			}
+			set
+			{
+				this._INVENTORY_TBs.Assign(value);
 			}
 		}
 		
@@ -852,6 +927,265 @@ namespace pos.Data
 						this._CATEGORY_ID = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("CATEGORY_TB");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_INVENTORY_TBs(INVENTORY_TB entity)
+		{
+			this.SendPropertyChanging();
+			entity.PRODUCT_TB = this;
+		}
+		
+		private void detach_INVENTORY_TBs(INVENTORY_TB entity)
+		{
+			this.SendPropertyChanging();
+			entity.PRODUCT_TB = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.INVENTORY_TB")]
+	public partial class INVENTORY_TB : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private System.Nullable<int> _PRODUCT_ID;
+		
+		private System.Nullable<decimal> _BUYING_PRICE;
+		
+		private System.Nullable<int> _QUANTITY;
+		
+		private System.Nullable<decimal> _TOTAL;
+		
+		private System.Nullable<System.DateTime> _CREATED_AT;
+		
+		private System.Nullable<System.DateTime> _UPDATED_AT;
+		
+		private EntityRef<PRODUCT_TB> _PRODUCT_TB;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnPRODUCT_IDChanging(System.Nullable<int> value);
+    partial void OnPRODUCT_IDChanged();
+    partial void OnBUYING_PRICEChanging(System.Nullable<decimal> value);
+    partial void OnBUYING_PRICEChanged();
+    partial void OnQUANTITYChanging(System.Nullable<int> value);
+    partial void OnQUANTITYChanged();
+    partial void OnTOTALChanging(System.Nullable<decimal> value);
+    partial void OnTOTALChanged();
+    partial void OnCREATED_ATChanging(System.Nullable<System.DateTime> value);
+    partial void OnCREATED_ATChanged();
+    partial void OnUPDATED_ATChanging(System.Nullable<System.DateTime> value);
+    partial void OnUPDATED_ATChanged();
+    #endregion
+		
+		public INVENTORY_TB()
+		{
+			this._PRODUCT_TB = default(EntityRef<PRODUCT_TB>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PRODUCT_ID", DbType="Int")]
+		public System.Nullable<int> PRODUCT_ID
+		{
+			get
+			{
+				return this._PRODUCT_ID;
+			}
+			set
+			{
+				if ((this._PRODUCT_ID != value))
+				{
+					if (this._PRODUCT_TB.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnPRODUCT_IDChanging(value);
+					this.SendPropertyChanging();
+					this._PRODUCT_ID = value;
+					this.SendPropertyChanged("PRODUCT_ID");
+					this.OnPRODUCT_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BUYING_PRICE", DbType="Decimal(18,0)")]
+		public System.Nullable<decimal> BUYING_PRICE
+		{
+			get
+			{
+				return this._BUYING_PRICE;
+			}
+			set
+			{
+				if ((this._BUYING_PRICE != value))
+				{
+					this.OnBUYING_PRICEChanging(value);
+					this.SendPropertyChanging();
+					this._BUYING_PRICE = value;
+					this.SendPropertyChanged("BUYING_PRICE");
+					this.OnBUYING_PRICEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QUANTITY", DbType="Int")]
+		public System.Nullable<int> QUANTITY
+		{
+			get
+			{
+				return this._QUANTITY;
+			}
+			set
+			{
+				if ((this._QUANTITY != value))
+				{
+					this.OnQUANTITYChanging(value);
+					this.SendPropertyChanging();
+					this._QUANTITY = value;
+					this.SendPropertyChanged("QUANTITY");
+					this.OnQUANTITYChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TOTAL", DbType="Decimal(18,0)")]
+		public System.Nullable<decimal> TOTAL
+		{
+			get
+			{
+				return this._TOTAL;
+			}
+			set
+			{
+				if ((this._TOTAL != value))
+				{
+					this.OnTOTALChanging(value);
+					this.SendPropertyChanging();
+					this._TOTAL = value;
+					this.SendPropertyChanged("TOTAL");
+					this.OnTOTALChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CREATED_AT", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CREATED_AT
+		{
+			get
+			{
+				return this._CREATED_AT;
+			}
+			set
+			{
+				if ((this._CREATED_AT != value))
+				{
+					this.OnCREATED_ATChanging(value);
+					this.SendPropertyChanging();
+					this._CREATED_AT = value;
+					this.SendPropertyChanged("CREATED_AT");
+					this.OnCREATED_ATChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UPDATED_AT", DbType="DateTime")]
+		public System.Nullable<System.DateTime> UPDATED_AT
+		{
+			get
+			{
+				return this._UPDATED_AT;
+			}
+			set
+			{
+				if ((this._UPDATED_AT != value))
+				{
+					this.OnUPDATED_ATChanging(value);
+					this.SendPropertyChanging();
+					this._UPDATED_AT = value;
+					this.SendPropertyChanged("UPDATED_AT");
+					this.OnUPDATED_ATChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PRODUCT_TB_INVENTORY_TB", Storage="_PRODUCT_TB", ThisKey="PRODUCT_ID", OtherKey="ID", IsForeignKey=true, DeleteRule="CASCADE")]
+		public PRODUCT_TB PRODUCT_TB
+		{
+			get
+			{
+				return this._PRODUCT_TB.Entity;
+			}
+			set
+			{
+				PRODUCT_TB previousValue = this._PRODUCT_TB.Entity;
+				if (((previousValue != value) 
+							|| (this._PRODUCT_TB.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._PRODUCT_TB.Entity = null;
+						previousValue.INVENTORY_TBs.Remove(this);
+					}
+					this._PRODUCT_TB.Entity = value;
+					if ((value != null))
+					{
+						value.INVENTORY_TBs.Add(this);
+						this._PRODUCT_ID = value.ID;
+					}
+					else
+					{
+						this._PRODUCT_ID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("PRODUCT_TB");
 				}
 			}
 		}

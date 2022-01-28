@@ -39,6 +39,7 @@
       <Column Name="CREATED_AT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="STATUS" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="PRODUCT_TB_INVENTORY_TB" Member="INVENTORY_TBs" ThisKey="ID" OtherKey="PRODUCT_ID" Type="INVENTORY_TB" />
+      <Association Name="PRODUCT_TB_ITEMS_DETAIL" Member="ITEMS_DETAILs" ThisKey="ID" OtherKey="PRODUCT_ID" Type="ITEMS_DETAIL" />
       <Association Name="BRAND_TB_PRODUCT_TB" Member="BRAND_TB" ThisKey="BRAND_ID" OtherKey="ID" Type="BRAND_TB" IsForeignKey="true" DeleteRule="CASCADE" />
       <Association Name="CATEGORY_TB_PRODUCT_TB" Member="CATEGORY_TB" ThisKey="CATEGORY_ID" OtherKey="ID" Type="CATEGORY_TB" IsForeignKey="true" DeleteRule="CASCADE" />
     </Type>
@@ -53,6 +54,24 @@
       <Column Name="CREATED_AT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="UPDATED_AT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Association Name="PRODUCT_TB_INVENTORY_TB" Member="PRODUCT_TB" ThisKey="PRODUCT_ID" OtherKey="ID" Type="PRODUCT_TB" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ITEMS_TB" Member="ITEMS_TBs">
+    <Type Name="ITEMS_TB">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ITEM_NAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PRICE" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Association Name="ITEMS_TB_ITEMS_DETAIL" Member="ITEMS_DETAILs" ThisKey="ID" OtherKey="ITEM_ID" Type="ITEMS_DETAIL" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ITEMS_DETAILS" Member="ITEMS_DETAILs">
+    <Type Name="ITEMS_DETAIL">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PRODUCT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ITEM_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QUANTITY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="ITEMS_TB_ITEMS_DETAIL" Member="ITEMS_TB" ThisKey="ITEM_ID" OtherKey="ID" Type="ITEMS_TB" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="PRODUCT_TB_ITEMS_DETAIL" Member="PRODUCT_TB" ThisKey="PRODUCT_ID" OtherKey="ID" Type="PRODUCT_TB" IsForeignKey="true" DeleteRule="CASCADE" />
     </Type>
   </Table>
 </Database>

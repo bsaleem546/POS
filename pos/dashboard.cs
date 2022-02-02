@@ -91,5 +91,15 @@ namespace pos
         {
             OpenChildForm(new Items());
         }
+
+        private void menus_btn_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Menu());
+        }
+
+        private void deal_btn_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Deals());
+        }
     }
 }

@@ -174,9 +174,8 @@
             this.PRODUCT_SEARCH.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PRODUCT_SEARCH.ForeColor = System.Drawing.Color.White;
             this.PRODUCT_SEARCH.Location = new System.Drawing.Point(772, 127);
-            this.PRODUCT_SEARCH.Multiline = true;
             this.PRODUCT_SEARCH.Name = "PRODUCT_SEARCH";
-            this.PRODUCT_SEARCH.Size = new System.Drawing.Size(260, 36);
+            this.PRODUCT_SEARCH.Size = new System.Drawing.Size(260, 33);
             this.PRODUCT_SEARCH.TabIndex = 8;
             this.PRODUCT_SEARCH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PRODUCT_SEARCH_KeyPress);
             // 
@@ -291,9 +290,8 @@
             this.PRODUCT_PRICE.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PRODUCT_PRICE.ForeColor = System.Drawing.Color.White;
             this.PRODUCT_PRICE.Location = new System.Drawing.Point(8, 127);
-            this.PRODUCT_PRICE.Multiline = true;
             this.PRODUCT_PRICE.Name = "PRODUCT_PRICE";
-            this.PRODUCT_PRICE.Size = new System.Drawing.Size(235, 36);
+            this.PRODUCT_PRICE.Size = new System.Drawing.Size(235, 33);
             this.PRODUCT_PRICE.TabIndex = 1;
             // 
             // PRODUCT_BRANDS
@@ -329,9 +327,8 @@
             this.PRODUCT_NAME.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PRODUCT_NAME.ForeColor = System.Drawing.Color.White;
             this.PRODUCT_NAME.Location = new System.Drawing.Point(8, 45);
-            this.PRODUCT_NAME.Multiline = true;
             this.PRODUCT_NAME.Name = "PRODUCT_NAME";
-            this.PRODUCT_NAME.Size = new System.Drawing.Size(235, 36);
+            this.PRODUCT_NAME.Size = new System.Drawing.Size(235, 33);
             this.PRODUCT_NAME.TabIndex = 0;
             // 
             // tabPage1
@@ -393,9 +390,8 @@
             this.BRAND_SEARCH.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BRAND_SEARCH.ForeColor = System.Drawing.Color.White;
             this.BRAND_SEARCH.Location = new System.Drawing.Point(14, 171);
-            this.BRAND_SEARCH.Multiline = true;
             this.BRAND_SEARCH.Name = "BRAND_SEARCH";
-            this.BRAND_SEARCH.Size = new System.Drawing.Size(244, 36);
+            this.BRAND_SEARCH.Size = new System.Drawing.Size(244, 33);
             this.BRAND_SEARCH.TabIndex = 11;
             this.BRAND_SEARCH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BRAND_SEARCH_KeyPress);
             // 
@@ -473,9 +469,8 @@
             this.BRAND_NAME.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BRAND_NAME.ForeColor = System.Drawing.Color.White;
             this.BRAND_NAME.Location = new System.Drawing.Point(14, 89);
-            this.BRAND_NAME.Multiline = true;
             this.BRAND_NAME.Name = "BRAND_NAME";
-            this.BRAND_NAME.Size = new System.Drawing.Size(244, 36);
+            this.BRAND_NAME.Size = new System.Drawing.Size(244, 33);
             this.BRAND_NAME.TabIndex = 6;
             // 
             // label9
@@ -558,9 +553,8 @@
             this.CAT_SEARCH.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CAT_SEARCH.ForeColor = System.Drawing.Color.White;
             this.CAT_SEARCH.Location = new System.Drawing.Point(10, 175);
-            this.CAT_SEARCH.Multiline = true;
             this.CAT_SEARCH.Name = "CAT_SEARCH";
-            this.CAT_SEARCH.Size = new System.Drawing.Size(244, 36);
+            this.CAT_SEARCH.Size = new System.Drawing.Size(244, 33);
             this.CAT_SEARCH.TabIndex = 5;
             this.CAT_SEARCH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CAT_SEARCH_KeyPress);
             // 
@@ -571,9 +565,8 @@
             this.CAT_NAME.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CAT_NAME.ForeColor = System.Drawing.Color.White;
             this.CAT_NAME.Location = new System.Drawing.Point(10, 93);
-            this.CAT_NAME.Multiline = true;
             this.CAT_NAME.Name = "CAT_NAME";
-            this.CAT_NAME.Size = new System.Drawing.Size(244, 36);
+            this.CAT_NAME.Size = new System.Drawing.Size(244, 33);
             this.CAT_NAME.TabIndex = 0;
             // 
             // CAT_DELETE
@@ -709,9 +702,8 @@
             this.INV_SEARCH.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.INV_SEARCH.ForeColor = System.Drawing.Color.White;
             this.INV_SEARCH.Location = new System.Drawing.Point(770, 126);
-            this.INV_SEARCH.Multiline = true;
             this.INV_SEARCH.Name = "INV_SEARCH";
-            this.INV_SEARCH.Size = new System.Drawing.Size(260, 36);
+            this.INV_SEARCH.Size = new System.Drawing.Size(260, 33);
             this.INV_SEARCH.TabIndex = 7;
             this.INV_SEARCH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.INV_SEARCH_KeyPress);
             // 
@@ -762,9 +754,8 @@
             this.INV_TOTAL.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.INV_TOTAL.ForeColor = System.Drawing.Color.White;
             this.INV_TOTAL.Location = new System.Drawing.Point(304, 126);
-            this.INV_TOTAL.Multiline = true;
             this.INV_TOTAL.Name = "INV_TOTAL";
-            this.INV_TOTAL.Size = new System.Drawing.Size(235, 36);
+            this.INV_TOTAL.Size = new System.Drawing.Size(235, 33);
             this.INV_TOTAL.TabIndex = 22;
             this.INV_TOTAL.Text = "0";
             // 
@@ -814,9 +805,8 @@
             this.INV_BUYING.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.INV_BUYING.ForeColor = System.Drawing.Color.White;
             this.INV_BUYING.Location = new System.Drawing.Point(304, 45);
-            this.INV_BUYING.Multiline = true;
             this.INV_BUYING.Name = "INV_BUYING";
-            this.INV_BUYING.Size = new System.Drawing.Size(235, 36);
+            this.INV_BUYING.Size = new System.Drawing.Size(235, 33);
             this.INV_BUYING.TabIndex = 2;
             this.INV_BUYING.Text = "0";
             this.INV_BUYING.TextChanged += new System.EventHandler(this.INV_BUYING_TextChanged);
@@ -839,9 +829,8 @@
             this.INV_QUANTITY.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.INV_QUANTITY.ForeColor = System.Drawing.Color.White;
             this.INV_QUANTITY.Location = new System.Drawing.Point(8, 126);
-            this.INV_QUANTITY.Multiline = true;
             this.INV_QUANTITY.Name = "INV_QUANTITY";
-            this.INV_QUANTITY.Size = new System.Drawing.Size(235, 36);
+            this.INV_QUANTITY.Size = new System.Drawing.Size(235, 33);
             this.INV_QUANTITY.TabIndex = 1;
             this.INV_QUANTITY.Text = "0";
             this.INV_QUANTITY.TextChanged += new System.EventHandler(this.INV_QUANTITY_TextChanged);

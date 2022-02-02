@@ -233,5 +233,23 @@ namespace pos
                 }
             }
         }
+
+        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string textInput = "";
+            if (e.KeyChar == (char)13)
+            {
+                if (sender is TextBox)
+                {
+                    TextBox txb = (TextBox)sender;
+                    textInput = txb.Text;
+                }
+                Data.ConnectionDataContext db = new Data.ConnectionDataContext();
+                var data = from x in db.ITEMS_TBs where
+                           x.ITEM_NAME.Contains(textBox3.Text)
+                           select new { ID = x.ID, Item = x.ITEM_NAME, Price = x.PRICE };
+                GRID_ITEMS.DataSource = data.ToList();
+            }
+        }
     }
 }

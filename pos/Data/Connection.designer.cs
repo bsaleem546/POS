@@ -51,6 +51,24 @@ namespace pos.Data
     partial void InsertITEMS_DETAIL(ITEMS_DETAIL instance);
     partial void UpdateITEMS_DETAIL(ITEMS_DETAIL instance);
     partial void DeleteITEMS_DETAIL(ITEMS_DETAIL instance);
+    partial void InsertDEALS_DETAIL(DEALS_DETAIL instance);
+    partial void UpdateDEALS_DETAIL(DEALS_DETAIL instance);
+    partial void DeleteDEALS_DETAIL(DEALS_DETAIL instance);
+    partial void InsertDEALS_TB(DEALS_TB instance);
+    partial void UpdateDEALS_TB(DEALS_TB instance);
+    partial void DeleteDEALS_TB(DEALS_TB instance);
+    partial void InsertMENU_TB(MENU_TB instance);
+    partial void UpdateMENU_TB(MENU_TB instance);
+    partial void DeleteMENU_TB(MENU_TB instance);
+    partial void InsertMENU_PRODUCT(MENU_PRODUCT instance);
+    partial void UpdateMENU_PRODUCT(MENU_PRODUCT instance);
+    partial void DeleteMENU_PRODUCT(MENU_PRODUCT instance);
+    partial void InsertMENU_ITEM(MENU_ITEM instance);
+    partial void UpdateMENU_ITEM(MENU_ITEM instance);
+    partial void DeleteMENU_ITEM(MENU_ITEM instance);
+    partial void InsertMENU_DEAL(MENU_DEAL instance);
+    partial void UpdateMENU_DEAL(MENU_DEAL instance);
+    partial void DeleteMENU_DEAL(MENU_DEAL instance);
     #endregion
 		
 		public ConnectionDataContext() : 
@@ -136,6 +154,54 @@ namespace pos.Data
 			get
 			{
 				return this.GetTable<ITEMS_DETAIL>();
+			}
+		}
+		
+		public System.Data.Linq.Table<DEALS_DETAIL> DEALS_DETAILs
+		{
+			get
+			{
+				return this.GetTable<DEALS_DETAIL>();
+			}
+		}
+		
+		public System.Data.Linq.Table<DEALS_TB> DEALS_TBs
+		{
+			get
+			{
+				return this.GetTable<DEALS_TB>();
+			}
+		}
+		
+		public System.Data.Linq.Table<MENU_TB> MENU_TBs
+		{
+			get
+			{
+				return this.GetTable<MENU_TB>();
+			}
+		}
+		
+		public System.Data.Linq.Table<MENU_PRODUCT> MENU_PRODUCTs
+		{
+			get
+			{
+				return this.GetTable<MENU_PRODUCT>();
+			}
+		}
+		
+		public System.Data.Linq.Table<MENU_ITEM> MENU_ITEMs
+		{
+			get
+			{
+				return this.GetTable<MENU_ITEM>();
+			}
+		}
+		
+		public System.Data.Linq.Table<MENU_DEAL> MENU_DEALs
+		{
+			get
+			{
+				return this.GetTable<MENU_DEAL>();
 			}
 		}
 	}
@@ -650,6 +716,8 @@ namespace pos.Data
 		
 		private EntitySet<ITEMS_DETAIL> _ITEMS_DETAILs;
 		
+		private EntitySet<MENU_PRODUCT> _MENU_PRODUCTs;
+		
 		private EntityRef<BRAND_TB> _BRAND_TB;
 		
 		private EntityRef<CATEGORY_TB> _CATEGORY_TB;
@@ -682,6 +750,7 @@ namespace pos.Data
 		{
 			this._INVENTORY_TBs = new EntitySet<INVENTORY_TB>(new Action<INVENTORY_TB>(this.attach_INVENTORY_TBs), new Action<INVENTORY_TB>(this.detach_INVENTORY_TBs));
 			this._ITEMS_DETAILs = new EntitySet<ITEMS_DETAIL>(new Action<ITEMS_DETAIL>(this.attach_ITEMS_DETAILs), new Action<ITEMS_DETAIL>(this.detach_ITEMS_DETAILs));
+			this._MENU_PRODUCTs = new EntitySet<MENU_PRODUCT>(new Action<MENU_PRODUCT>(this.attach_MENU_PRODUCTs), new Action<MENU_PRODUCT>(this.detach_MENU_PRODUCTs));
 			this._BRAND_TB = default(EntityRef<BRAND_TB>);
 			this._CATEGORY_TB = default(EntityRef<CATEGORY_TB>);
 			OnCreated();
@@ -901,6 +970,19 @@ namespace pos.Data
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PRODUCT_TB_MENU_PRODUCT", Storage="_MENU_PRODUCTs", ThisKey="ID", OtherKey="PRODUCT_ID")]
+		public EntitySet<MENU_PRODUCT> MENU_PRODUCTs
+		{
+			get
+			{
+				return this._MENU_PRODUCTs;
+			}
+			set
+			{
+				this._MENU_PRODUCTs.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BRAND_TB_PRODUCT_TB", Storage="_BRAND_TB", ThisKey="BRAND_ID", OtherKey="ID", IsForeignKey=true, DeleteRule="CASCADE")]
 		public BRAND_TB BRAND_TB
 		{
@@ -1008,6 +1090,18 @@ namespace pos.Data
 		}
 		
 		private void detach_ITEMS_DETAILs(ITEMS_DETAIL entity)
+		{
+			this.SendPropertyChanging();
+			entity.PRODUCT_TB = null;
+		}
+		
+		private void attach_MENU_PRODUCTs(MENU_PRODUCT entity)
+		{
+			this.SendPropertyChanging();
+			entity.PRODUCT_TB = this;
+		}
+		
+		private void detach_MENU_PRODUCTs(MENU_PRODUCT entity)
 		{
 			this.SendPropertyChanging();
 			entity.PRODUCT_TB = null;
@@ -1275,6 +1369,10 @@ namespace pos.Data
 		
 		private EntitySet<ITEMS_DETAIL> _ITEMS_DETAILs;
 		
+		private EntitySet<DEALS_DETAIL> _DEALS_DETAILs;
+		
+		private EntitySet<MENU_ITEM> _MENU_ITEMs;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1290,6 +1388,8 @@ namespace pos.Data
 		public ITEMS_TB()
 		{
 			this._ITEMS_DETAILs = new EntitySet<ITEMS_DETAIL>(new Action<ITEMS_DETAIL>(this.attach_ITEMS_DETAILs), new Action<ITEMS_DETAIL>(this.detach_ITEMS_DETAILs));
+			this._DEALS_DETAILs = new EntitySet<DEALS_DETAIL>(new Action<DEALS_DETAIL>(this.attach_DEALS_DETAILs), new Action<DEALS_DETAIL>(this.detach_DEALS_DETAILs));
+			this._MENU_ITEMs = new EntitySet<MENU_ITEM>(new Action<MENU_ITEM>(this.attach_MENU_ITEMs), new Action<MENU_ITEM>(this.detach_MENU_ITEMs));
 			OnCreated();
 		}
 		
@@ -1366,6 +1466,32 @@ namespace pos.Data
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ITEMS_TB_DEALS_DETAIL", Storage="_DEALS_DETAILs", ThisKey="ID", OtherKey="ITEM_ID")]
+		public EntitySet<DEALS_DETAIL> DEALS_DETAILs
+		{
+			get
+			{
+				return this._DEALS_DETAILs;
+			}
+			set
+			{
+				this._DEALS_DETAILs.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ITEMS_TB_MENU_ITEM", Storage="_MENU_ITEMs", ThisKey="ID", OtherKey="ITEM_ID")]
+		public EntitySet<MENU_ITEM> MENU_ITEMs
+		{
+			get
+			{
+				return this._MENU_ITEMs;
+			}
+			set
+			{
+				this._MENU_ITEMs.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -1393,6 +1519,30 @@ namespace pos.Data
 		}
 		
 		private void detach_ITEMS_DETAILs(ITEMS_DETAIL entity)
+		{
+			this.SendPropertyChanging();
+			entity.ITEMS_TB = null;
+		}
+		
+		private void attach_DEALS_DETAILs(DEALS_DETAIL entity)
+		{
+			this.SendPropertyChanging();
+			entity.ITEMS_TB = this;
+		}
+		
+		private void detach_DEALS_DETAILs(DEALS_DETAIL entity)
+		{
+			this.SendPropertyChanging();
+			entity.ITEMS_TB = null;
+		}
+		
+		private void attach_MENU_ITEMs(MENU_ITEM entity)
+		{
+			this.SendPropertyChanging();
+			entity.ITEMS_TB = this;
+		}
+		
+		private void detach_MENU_ITEMs(MENU_ITEM entity)
 		{
 			this.SendPropertyChanging();
 			entity.ITEMS_TB = null;
@@ -1590,6 +1740,1158 @@ namespace pos.Data
 						this._PRODUCT_ID = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("PRODUCT_TB");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DEALS_DETAILS")]
+	public partial class DEALS_DETAIL : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private System.Nullable<int> _DEAL_ID;
+		
+		private System.Nullable<int> _ITEM_ID;
+		
+		private System.Nullable<int> _ITEM_QUANTITY;
+		
+		private EntityRef<ITEMS_TB> _ITEMS_TB;
+		
+		private EntityRef<DEALS_TB> _DEALS_TB;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnDEAL_IDChanging(System.Nullable<int> value);
+    partial void OnDEAL_IDChanged();
+    partial void OnITEM_IDChanging(System.Nullable<int> value);
+    partial void OnITEM_IDChanged();
+    partial void OnITEM_QUANTITYChanging(System.Nullable<int> value);
+    partial void OnITEM_QUANTITYChanged();
+    #endregion
+		
+		public DEALS_DETAIL()
+		{
+			this._ITEMS_TB = default(EntityRef<ITEMS_TB>);
+			this._DEALS_TB = default(EntityRef<DEALS_TB>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DEAL_ID", DbType="Int")]
+		public System.Nullable<int> DEAL_ID
+		{
+			get
+			{
+				return this._DEAL_ID;
+			}
+			set
+			{
+				if ((this._DEAL_ID != value))
+				{
+					if (this._DEALS_TB.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnDEAL_IDChanging(value);
+					this.SendPropertyChanging();
+					this._DEAL_ID = value;
+					this.SendPropertyChanged("DEAL_ID");
+					this.OnDEAL_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ITEM_ID", DbType="Int")]
+		public System.Nullable<int> ITEM_ID
+		{
+			get
+			{
+				return this._ITEM_ID;
+			}
+			set
+			{
+				if ((this._ITEM_ID != value))
+				{
+					if (this._ITEMS_TB.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnITEM_IDChanging(value);
+					this.SendPropertyChanging();
+					this._ITEM_ID = value;
+					this.SendPropertyChanged("ITEM_ID");
+					this.OnITEM_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ITEM_QUANTITY", DbType="Int")]
+		public System.Nullable<int> ITEM_QUANTITY
+		{
+			get
+			{
+				return this._ITEM_QUANTITY;
+			}
+			set
+			{
+				if ((this._ITEM_QUANTITY != value))
+				{
+					this.OnITEM_QUANTITYChanging(value);
+					this.SendPropertyChanging();
+					this._ITEM_QUANTITY = value;
+					this.SendPropertyChanged("ITEM_QUANTITY");
+					this.OnITEM_QUANTITYChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ITEMS_TB_DEALS_DETAIL", Storage="_ITEMS_TB", ThisKey="ITEM_ID", OtherKey="ID", IsForeignKey=true, DeleteRule="CASCADE")]
+		public ITEMS_TB ITEMS_TB
+		{
+			get
+			{
+				return this._ITEMS_TB.Entity;
+			}
+			set
+			{
+				ITEMS_TB previousValue = this._ITEMS_TB.Entity;
+				if (((previousValue != value) 
+							|| (this._ITEMS_TB.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._ITEMS_TB.Entity = null;
+						previousValue.DEALS_DETAILs.Remove(this);
+					}
+					this._ITEMS_TB.Entity = value;
+					if ((value != null))
+					{
+						value.DEALS_DETAILs.Add(this);
+						this._ITEM_ID = value.ID;
+					}
+					else
+					{
+						this._ITEM_ID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("ITEMS_TB");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DEALS_TB_DEALS_DETAIL", Storage="_DEALS_TB", ThisKey="DEAL_ID", OtherKey="ID", IsForeignKey=true, DeleteRule="CASCADE")]
+		public DEALS_TB DEALS_TB
+		{
+			get
+			{
+				return this._DEALS_TB.Entity;
+			}
+			set
+			{
+				DEALS_TB previousValue = this._DEALS_TB.Entity;
+				if (((previousValue != value) 
+							|| (this._DEALS_TB.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._DEALS_TB.Entity = null;
+						previousValue.DEALS_DETAILs.Remove(this);
+					}
+					this._DEALS_TB.Entity = value;
+					if ((value != null))
+					{
+						value.DEALS_DETAILs.Add(this);
+						this._DEAL_ID = value.ID;
+					}
+					else
+					{
+						this._DEAL_ID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("DEALS_TB");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DEALS_TB")]
+	public partial class DEALS_TB : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _DEAL_NAME;
+		
+		private System.Nullable<decimal> _PRICE;
+		
+		private EntitySet<DEALS_DETAIL> _DEALS_DETAILs;
+		
+		private EntitySet<MENU_DEAL> _MENU_DEALs;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnDEAL_NAMEChanging(string value);
+    partial void OnDEAL_NAMEChanged();
+    partial void OnPRICEChanging(System.Nullable<decimal> value);
+    partial void OnPRICEChanged();
+    #endregion
+		
+		public DEALS_TB()
+		{
+			this._DEALS_DETAILs = new EntitySet<DEALS_DETAIL>(new Action<DEALS_DETAIL>(this.attach_DEALS_DETAILs), new Action<DEALS_DETAIL>(this.detach_DEALS_DETAILs));
+			this._MENU_DEALs = new EntitySet<MENU_DEAL>(new Action<MENU_DEAL>(this.attach_MENU_DEALs), new Action<MENU_DEAL>(this.detach_MENU_DEALs));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DEAL_NAME", DbType="VarChar(50)")]
+		public string DEAL_NAME
+		{
+			get
+			{
+				return this._DEAL_NAME;
+			}
+			set
+			{
+				if ((this._DEAL_NAME != value))
+				{
+					this.OnDEAL_NAMEChanging(value);
+					this.SendPropertyChanging();
+					this._DEAL_NAME = value;
+					this.SendPropertyChanged("DEAL_NAME");
+					this.OnDEAL_NAMEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PRICE", DbType="Decimal(18,0)")]
+		public System.Nullable<decimal> PRICE
+		{
+			get
+			{
+				return this._PRICE;
+			}
+			set
+			{
+				if ((this._PRICE != value))
+				{
+					this.OnPRICEChanging(value);
+					this.SendPropertyChanging();
+					this._PRICE = value;
+					this.SendPropertyChanged("PRICE");
+					this.OnPRICEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DEALS_TB_DEALS_DETAIL", Storage="_DEALS_DETAILs", ThisKey="ID", OtherKey="DEAL_ID")]
+		public EntitySet<DEALS_DETAIL> DEALS_DETAILs
+		{
+			get
+			{
+				return this._DEALS_DETAILs;
+			}
+			set
+			{
+				this._DEALS_DETAILs.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DEALS_TB_MENU_DEAL", Storage="_MENU_DEALs", ThisKey="ID", OtherKey="DEAL_ID")]
+		public EntitySet<MENU_DEAL> MENU_DEALs
+		{
+			get
+			{
+				return this._MENU_DEALs;
+			}
+			set
+			{
+				this._MENU_DEALs.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_DEALS_DETAILs(DEALS_DETAIL entity)
+		{
+			this.SendPropertyChanging();
+			entity.DEALS_TB = this;
+		}
+		
+		private void detach_DEALS_DETAILs(DEALS_DETAIL entity)
+		{
+			this.SendPropertyChanging();
+			entity.DEALS_TB = null;
+		}
+		
+		private void attach_MENU_DEALs(MENU_DEAL entity)
+		{
+			this.SendPropertyChanging();
+			entity.DEALS_TB = this;
+		}
+		
+		private void detach_MENU_DEALs(MENU_DEAL entity)
+		{
+			this.SendPropertyChanging();
+			entity.DEALS_TB = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MENU_TB")]
+	public partial class MENU_TB : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _MENU_NAME;
+		
+		private System.Nullable<bool> _STATUS;
+		
+		private EntitySet<MENU_PRODUCT> _MENU_PRODUCTs;
+		
+		private EntitySet<MENU_ITEM> _MENU_ITEMs;
+		
+		private EntitySet<MENU_DEAL> _MENU_DEALs;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnMENU_NAMEChanging(string value);
+    partial void OnMENU_NAMEChanged();
+    partial void OnSTATUSChanging(System.Nullable<bool> value);
+    partial void OnSTATUSChanged();
+    #endregion
+		
+		public MENU_TB()
+		{
+			this._MENU_PRODUCTs = new EntitySet<MENU_PRODUCT>(new Action<MENU_PRODUCT>(this.attach_MENU_PRODUCTs), new Action<MENU_PRODUCT>(this.detach_MENU_PRODUCTs));
+			this._MENU_ITEMs = new EntitySet<MENU_ITEM>(new Action<MENU_ITEM>(this.attach_MENU_ITEMs), new Action<MENU_ITEM>(this.detach_MENU_ITEMs));
+			this._MENU_DEALs = new EntitySet<MENU_DEAL>(new Action<MENU_DEAL>(this.attach_MENU_DEALs), new Action<MENU_DEAL>(this.detach_MENU_DEALs));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MENU_NAME", DbType="VarChar(50)")]
+		public string MENU_NAME
+		{
+			get
+			{
+				return this._MENU_NAME;
+			}
+			set
+			{
+				if ((this._MENU_NAME != value))
+				{
+					this.OnMENU_NAMEChanging(value);
+					this.SendPropertyChanging();
+					this._MENU_NAME = value;
+					this.SendPropertyChanged("MENU_NAME");
+					this.OnMENU_NAMEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STATUS", DbType="Bit")]
+		public System.Nullable<bool> STATUS
+		{
+			get
+			{
+				return this._STATUS;
+			}
+			set
+			{
+				if ((this._STATUS != value))
+				{
+					this.OnSTATUSChanging(value);
+					this.SendPropertyChanging();
+					this._STATUS = value;
+					this.SendPropertyChanged("STATUS");
+					this.OnSTATUSChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="MENU_TB_MENU_PRODUCT", Storage="_MENU_PRODUCTs", ThisKey="ID", OtherKey="MENU_ID")]
+		public EntitySet<MENU_PRODUCT> MENU_PRODUCTs
+		{
+			get
+			{
+				return this._MENU_PRODUCTs;
+			}
+			set
+			{
+				this._MENU_PRODUCTs.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="MENU_TB_MENU_ITEM", Storage="_MENU_ITEMs", ThisKey="ID", OtherKey="MENU_ID")]
+		public EntitySet<MENU_ITEM> MENU_ITEMs
+		{
+			get
+			{
+				return this._MENU_ITEMs;
+			}
+			set
+			{
+				this._MENU_ITEMs.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="MENU_TB_MENU_DEAL", Storage="_MENU_DEALs", ThisKey="ID", OtherKey="MENU_ID")]
+		public EntitySet<MENU_DEAL> MENU_DEALs
+		{
+			get
+			{
+				return this._MENU_DEALs;
+			}
+			set
+			{
+				this._MENU_DEALs.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_MENU_PRODUCTs(MENU_PRODUCT entity)
+		{
+			this.SendPropertyChanging();
+			entity.MENU_TB = this;
+		}
+		
+		private void detach_MENU_PRODUCTs(MENU_PRODUCT entity)
+		{
+			this.SendPropertyChanging();
+			entity.MENU_TB = null;
+		}
+		
+		private void attach_MENU_ITEMs(MENU_ITEM entity)
+		{
+			this.SendPropertyChanging();
+			entity.MENU_TB = this;
+		}
+		
+		private void detach_MENU_ITEMs(MENU_ITEM entity)
+		{
+			this.SendPropertyChanging();
+			entity.MENU_TB = null;
+		}
+		
+		private void attach_MENU_DEALs(MENU_DEAL entity)
+		{
+			this.SendPropertyChanging();
+			entity.MENU_TB = this;
+		}
+		
+		private void detach_MENU_DEALs(MENU_DEAL entity)
+		{
+			this.SendPropertyChanging();
+			entity.MENU_TB = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MENU_PRODUCTS")]
+	public partial class MENU_PRODUCT : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private System.Nullable<int> _MENU_ID;
+		
+		private System.Nullable<int> _PRODUCT_ID;
+		
+		private EntityRef<MENU_TB> _MENU_TB;
+		
+		private EntityRef<PRODUCT_TB> _PRODUCT_TB;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnMENU_IDChanging(System.Nullable<int> value);
+    partial void OnMENU_IDChanged();
+    partial void OnPRODUCT_IDChanging(System.Nullable<int> value);
+    partial void OnPRODUCT_IDChanged();
+    #endregion
+		
+		public MENU_PRODUCT()
+		{
+			this._MENU_TB = default(EntityRef<MENU_TB>);
+			this._PRODUCT_TB = default(EntityRef<PRODUCT_TB>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MENU_ID", DbType="Int")]
+		public System.Nullable<int> MENU_ID
+		{
+			get
+			{
+				return this._MENU_ID;
+			}
+			set
+			{
+				if ((this._MENU_ID != value))
+				{
+					if (this._MENU_TB.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMENU_IDChanging(value);
+					this.SendPropertyChanging();
+					this._MENU_ID = value;
+					this.SendPropertyChanged("MENU_ID");
+					this.OnMENU_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PRODUCT_ID", DbType="Int")]
+		public System.Nullable<int> PRODUCT_ID
+		{
+			get
+			{
+				return this._PRODUCT_ID;
+			}
+			set
+			{
+				if ((this._PRODUCT_ID != value))
+				{
+					if (this._PRODUCT_TB.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnPRODUCT_IDChanging(value);
+					this.SendPropertyChanging();
+					this._PRODUCT_ID = value;
+					this.SendPropertyChanged("PRODUCT_ID");
+					this.OnPRODUCT_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="MENU_TB_MENU_PRODUCT", Storage="_MENU_TB", ThisKey="MENU_ID", OtherKey="ID", IsForeignKey=true, DeleteRule="CASCADE")]
+		public MENU_TB MENU_TB
+		{
+			get
+			{
+				return this._MENU_TB.Entity;
+			}
+			set
+			{
+				MENU_TB previousValue = this._MENU_TB.Entity;
+				if (((previousValue != value) 
+							|| (this._MENU_TB.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._MENU_TB.Entity = null;
+						previousValue.MENU_PRODUCTs.Remove(this);
+					}
+					this._MENU_TB.Entity = value;
+					if ((value != null))
+					{
+						value.MENU_PRODUCTs.Add(this);
+						this._MENU_ID = value.ID;
+					}
+					else
+					{
+						this._MENU_ID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("MENU_TB");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PRODUCT_TB_MENU_PRODUCT", Storage="_PRODUCT_TB", ThisKey="PRODUCT_ID", OtherKey="ID", IsForeignKey=true, DeleteRule="CASCADE")]
+		public PRODUCT_TB PRODUCT_TB
+		{
+			get
+			{
+				return this._PRODUCT_TB.Entity;
+			}
+			set
+			{
+				PRODUCT_TB previousValue = this._PRODUCT_TB.Entity;
+				if (((previousValue != value) 
+							|| (this._PRODUCT_TB.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._PRODUCT_TB.Entity = null;
+						previousValue.MENU_PRODUCTs.Remove(this);
+					}
+					this._PRODUCT_TB.Entity = value;
+					if ((value != null))
+					{
+						value.MENU_PRODUCTs.Add(this);
+						this._PRODUCT_ID = value.ID;
+					}
+					else
+					{
+						this._PRODUCT_ID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("PRODUCT_TB");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MENU_ITEMS")]
+	public partial class MENU_ITEM : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private System.Nullable<int> _MENU_ID;
+		
+		private System.Nullable<int> _ITEM_ID;
+		
+		private EntityRef<ITEMS_TB> _ITEMS_TB;
+		
+		private EntityRef<MENU_TB> _MENU_TB;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnMENU_IDChanging(System.Nullable<int> value);
+    partial void OnMENU_IDChanged();
+    partial void OnITEM_IDChanging(System.Nullable<int> value);
+    partial void OnITEM_IDChanged();
+    #endregion
+		
+		public MENU_ITEM()
+		{
+			this._ITEMS_TB = default(EntityRef<ITEMS_TB>);
+			this._MENU_TB = default(EntityRef<MENU_TB>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MENU_ID", DbType="Int")]
+		public System.Nullable<int> MENU_ID
+		{
+			get
+			{
+				return this._MENU_ID;
+			}
+			set
+			{
+				if ((this._MENU_ID != value))
+				{
+					if (this._MENU_TB.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMENU_IDChanging(value);
+					this.SendPropertyChanging();
+					this._MENU_ID = value;
+					this.SendPropertyChanged("MENU_ID");
+					this.OnMENU_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ITEM_ID", DbType="Int")]
+		public System.Nullable<int> ITEM_ID
+		{
+			get
+			{
+				return this._ITEM_ID;
+			}
+			set
+			{
+				if ((this._ITEM_ID != value))
+				{
+					if (this._ITEMS_TB.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnITEM_IDChanging(value);
+					this.SendPropertyChanging();
+					this._ITEM_ID = value;
+					this.SendPropertyChanged("ITEM_ID");
+					this.OnITEM_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ITEMS_TB_MENU_ITEM", Storage="_ITEMS_TB", ThisKey="ITEM_ID", OtherKey="ID", IsForeignKey=true, DeleteRule="CASCADE")]
+		public ITEMS_TB ITEMS_TB
+		{
+			get
+			{
+				return this._ITEMS_TB.Entity;
+			}
+			set
+			{
+				ITEMS_TB previousValue = this._ITEMS_TB.Entity;
+				if (((previousValue != value) 
+							|| (this._ITEMS_TB.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._ITEMS_TB.Entity = null;
+						previousValue.MENU_ITEMs.Remove(this);
+					}
+					this._ITEMS_TB.Entity = value;
+					if ((value != null))
+					{
+						value.MENU_ITEMs.Add(this);
+						this._ITEM_ID = value.ID;
+					}
+					else
+					{
+						this._ITEM_ID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("ITEMS_TB");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="MENU_TB_MENU_ITEM", Storage="_MENU_TB", ThisKey="MENU_ID", OtherKey="ID", IsForeignKey=true, DeleteRule="CASCADE")]
+		public MENU_TB MENU_TB
+		{
+			get
+			{
+				return this._MENU_TB.Entity;
+			}
+			set
+			{
+				MENU_TB previousValue = this._MENU_TB.Entity;
+				if (((previousValue != value) 
+							|| (this._MENU_TB.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._MENU_TB.Entity = null;
+						previousValue.MENU_ITEMs.Remove(this);
+					}
+					this._MENU_TB.Entity = value;
+					if ((value != null))
+					{
+						value.MENU_ITEMs.Add(this);
+						this._MENU_ID = value.ID;
+					}
+					else
+					{
+						this._MENU_ID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("MENU_TB");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MENU_DEALS")]
+	public partial class MENU_DEAL : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private System.Nullable<int> _MENU_ID;
+		
+		private System.Nullable<int> _DEAL_ID;
+		
+		private EntityRef<DEALS_TB> _DEALS_TB;
+		
+		private EntityRef<MENU_TB> _MENU_TB;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnMENU_IDChanging(System.Nullable<int> value);
+    partial void OnMENU_IDChanged();
+    partial void OnDEAL_IDChanging(System.Nullable<int> value);
+    partial void OnDEAL_IDChanged();
+    #endregion
+		
+		public MENU_DEAL()
+		{
+			this._DEALS_TB = default(EntityRef<DEALS_TB>);
+			this._MENU_TB = default(EntityRef<MENU_TB>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MENU_ID", DbType="Int")]
+		public System.Nullable<int> MENU_ID
+		{
+			get
+			{
+				return this._MENU_ID;
+			}
+			set
+			{
+				if ((this._MENU_ID != value))
+				{
+					if (this._MENU_TB.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMENU_IDChanging(value);
+					this.SendPropertyChanging();
+					this._MENU_ID = value;
+					this.SendPropertyChanged("MENU_ID");
+					this.OnMENU_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DEAL_ID", DbType="Int")]
+		public System.Nullable<int> DEAL_ID
+		{
+			get
+			{
+				return this._DEAL_ID;
+			}
+			set
+			{
+				if ((this._DEAL_ID != value))
+				{
+					if (this._DEALS_TB.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnDEAL_IDChanging(value);
+					this.SendPropertyChanging();
+					this._DEAL_ID = value;
+					this.SendPropertyChanged("DEAL_ID");
+					this.OnDEAL_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DEALS_TB_MENU_DEAL", Storage="_DEALS_TB", ThisKey="DEAL_ID", OtherKey="ID", IsForeignKey=true, DeleteRule="CASCADE")]
+		public DEALS_TB DEALS_TB
+		{
+			get
+			{
+				return this._DEALS_TB.Entity;
+			}
+			set
+			{
+				DEALS_TB previousValue = this._DEALS_TB.Entity;
+				if (((previousValue != value) 
+							|| (this._DEALS_TB.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._DEALS_TB.Entity = null;
+						previousValue.MENU_DEALs.Remove(this);
+					}
+					this._DEALS_TB.Entity = value;
+					if ((value != null))
+					{
+						value.MENU_DEALs.Add(this);
+						this._DEAL_ID = value.ID;
+					}
+					else
+					{
+						this._DEAL_ID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("DEALS_TB");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="MENU_TB_MENU_DEAL", Storage="_MENU_TB", ThisKey="MENU_ID", OtherKey="ID", IsForeignKey=true, DeleteRule="CASCADE")]
+		public MENU_TB MENU_TB
+		{
+			get
+			{
+				return this._MENU_TB.Entity;
+			}
+			set
+			{
+				MENU_TB previousValue = this._MENU_TB.Entity;
+				if (((previousValue != value) 
+							|| (this._MENU_TB.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._MENU_TB.Entity = null;
+						previousValue.MENU_DEALs.Remove(this);
+					}
+					this._MENU_TB.Entity = value;
+					if ((value != null))
+					{
+						value.MENU_DEALs.Add(this);
+						this._MENU_ID = value.ID;
+					}
+					else
+					{
+						this._MENU_ID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("MENU_TB");
 				}
 			}
 		}

@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.menus_btn = new FontAwesome.Sharp.IconButton();
+            this.deal_btn = new FontAwesome.Sharp.IconButton();
+            this.items_btn = new FontAwesome.Sharp.IconButton();
             this.inventory_btn = new FontAwesome.Sharp.IconButton();
             this.user_btn = new FontAwesome.Sharp.IconButton();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -38,7 +41,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panelHolder = new System.Windows.Forms.Panel();
-            this.items_btn = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -47,6 +49,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.panel1.Controls.Add(this.menus_btn);
+            this.panel1.Controls.Add(this.deal_btn);
             this.panel1.Controls.Add(this.items_btn);
             this.panel1.Controls.Add(this.inventory_btn);
             this.panel1.Controls.Add(this.user_btn);
@@ -56,6 +60,75 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(210, 800);
             this.panel1.TabIndex = 0;
+            // 
+            // menus_btn
+            // 
+            this.menus_btn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.menus_btn.FlatAppearance.BorderSize = 0;
+            this.menus_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.menus_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menus_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(255)))), ((int)(((byte)(235)))));
+            this.menus_btn.IconChar = FontAwesome.Sharp.IconChar.Book;
+            this.menus_btn.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(255)))), ((int)(((byte)(235)))));
+            this.menus_btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.menus_btn.IconSize = 32;
+            this.menus_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.menus_btn.Location = new System.Drawing.Point(0, 376);
+            this.menus_btn.Name = "menus_btn";
+            this.menus_btn.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.menus_btn.Size = new System.Drawing.Size(210, 60);
+            this.menus_btn.TabIndex = 10;
+            this.menus_btn.Text = "Menus";
+            this.menus_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.menus_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.menus_btn.UseVisualStyleBackColor = true;
+            this.menus_btn.Click += new System.EventHandler(this.menus_btn_Click);
+            // 
+            // deal_btn
+            // 
+            this.deal_btn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.deal_btn.FlatAppearance.BorderSize = 0;
+            this.deal_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deal_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deal_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(255)))), ((int)(((byte)(235)))));
+            this.deal_btn.IconChar = FontAwesome.Sharp.IconChar.Mendeley;
+            this.deal_btn.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(255)))), ((int)(((byte)(235)))));
+            this.deal_btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.deal_btn.IconSize = 32;
+            this.deal_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.deal_btn.Location = new System.Drawing.Point(0, 316);
+            this.deal_btn.Name = "deal_btn";
+            this.deal_btn.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.deal_btn.Size = new System.Drawing.Size(210, 60);
+            this.deal_btn.TabIndex = 9;
+            this.deal_btn.Text = "Deals";
+            this.deal_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.deal_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.deal_btn.UseVisualStyleBackColor = true;
+            this.deal_btn.Click += new System.EventHandler(this.deal_btn_Click);
+            // 
+            // items_btn
+            // 
+            this.items_btn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.items_btn.FlatAppearance.BorderSize = 0;
+            this.items_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.items_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.items_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(255)))), ((int)(((byte)(235)))));
+            this.items_btn.IconChar = FontAwesome.Sharp.IconChar.Sitemap;
+            this.items_btn.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(255)))), ((int)(((byte)(235)))));
+            this.items_btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.items_btn.IconSize = 32;
+            this.items_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.items_btn.Location = new System.Drawing.Point(0, 256);
+            this.items_btn.Name = "items_btn";
+            this.items_btn.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.items_btn.Size = new System.Drawing.Size(210, 60);
+            this.items_btn.TabIndex = 8;
+            this.items_btn.Text = "Items";
+            this.items_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.items_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.items_btn.UseVisualStyleBackColor = true;
+            this.items_btn.Click += new System.EventHandler(this.items_btn_Click);
             // 
             // inventory_btn
             // 
@@ -181,29 +254,6 @@
             this.panelHolder.Size = new System.Drawing.Size(1070, 740);
             this.panelHolder.TabIndex = 2;
             // 
-            // items_btn
-            // 
-            this.items_btn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.items_btn.FlatAppearance.BorderSize = 0;
-            this.items_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.items_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.items_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(255)))), ((int)(((byte)(235)))));
-            this.items_btn.IconChar = FontAwesome.Sharp.IconChar.Sitemap;
-            this.items_btn.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(255)))), ((int)(((byte)(235)))));
-            this.items_btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.items_btn.IconSize = 32;
-            this.items_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.items_btn.Location = new System.Drawing.Point(0, 256);
-            this.items_btn.Name = "items_btn";
-            this.items_btn.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.items_btn.Size = new System.Drawing.Size(210, 60);
-            this.items_btn.TabIndex = 8;
-            this.items_btn.Text = "Items";
-            this.items_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.items_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.items_btn.UseVisualStyleBackColor = true;
-            this.items_btn.Click += new System.EventHandler(this.items_btn_Click);
-            // 
             // dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -240,5 +290,7 @@
         private System.Windows.Forms.Panel panelHolder;
         private System.Windows.Forms.Label label4;
         private FontAwesome.Sharp.IconButton items_btn;
+        private FontAwesome.Sharp.IconButton deal_btn;
+        private FontAwesome.Sharp.IconButton menus_btn;
     }
 }

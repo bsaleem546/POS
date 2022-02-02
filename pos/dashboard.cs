@@ -101,5 +101,10 @@ namespace pos
         {
             OpenChildForm(new Deals());
         }
+
+        private void discount_btn_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Discount());
+        }
     }
 }

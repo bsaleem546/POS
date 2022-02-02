@@ -401,11 +401,91 @@ namespace pos
 
         private void button5_Click(object sender, EventArgs e)
         {
-            printPreviewDialog1.ShowDialog();
+            printDialog1.ShowDialog();
         }
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
+            Data.ConnectionDataContext db = new Data.ConnectionDataContext();
+            var menu = from x in db.MENU_TBs where x.STATUS == true select x;
+            e.Graphics.DrawString("Simple POS", new Font("Arial", 35, FontStyle.Bold), Brushes.Black, 300, 50);
+            int marginTop = 100;
+            foreach (var rowObj in menu)
+            {
+                var product = from x in db.MENU_PRODUCTs
+                              join p in db.PRODUCT_TBs on x.PRODUCT_ID equals p.ID
+                              where x.MENU_ID == rowObj.ID
+                              select new
+                              { PRODUCT_NAME = p.PRODUCT, PRODUCT_PRICE = p.SELL_PRICE };
+                e.Graphics.DrawString(rowObj.MENU_NAME, new Font("Arial", 25, FontStyle.Bold), Brushes.Black, 50, marginTop);
+                if (product.Any())
+                {
+                    foreach (var p in product)
+                    {
+                        marginTop = marginTop + 50;
+                        e.Graphics.DrawString(p.PRODUCT_NAME,
+                            new Font("Arial", 12, FontStyle.Regular), Brushes.Black, 50, marginTop);
+                        e.Graphics.DrawString(p.PRODUCT_PRICE.ToString(),
+                            new Font("Arial", 12, FontStyle.Regular), Brushes.Black, 500, marginTop);
+                    }
+                }
+
+                var item = from x in db.MENU_ITEMs
+                           join it in db.ITEMS_TBs on x.ITEM_ID equals it.ID
+                           where x.MENU_ID == rowObj.ID
+                           select new
+                           { ITEM_NAME = it.ITEM_NAME, ITEM_PRICE = it.PRICE };
+                if (item.Any())
+                {
+                    foreach (var i in item)
+                    {
+                        marginTop = marginTop + 50;
+                        e.Graphics.DrawString(i.ITEM_NAME,
+                           new Font("Arial", 12, FontStyle.Regular), Brushes.Black, 50, marginTop);
+                        e.Graphics.DrawString(i.ITEM_PRICE.ToString(),
+                            new Font("Arial", 12, FontStyle.Regular), Brushes.Black, 500, marginTop);
+                    }
+                }
+
+                var deal = (from x in db.MENU_DEALs
+                           join d in db.DEALS_TBs on x.DEAL_ID equals d.ID into ddd
+                           from d in ddd.DefaultIfEmpty()
+                           join dd in db.DEALS_DETAILs on d.ID equals dd.DEAL_ID into dddd
+                           from dd in dddd.DefaultIfEmpty()
+                           where x.MENU_ID == rowObj.ID
+                           select new
+                           {
+                               ID = d.ID,
+                               DEAL_NAME = d.DEAL_NAME,
+                               DEAL_PRICE = d.PRICE,
+                               DEAL_ITEM_QUANTITY = dd.ITEM_QUANTITY
+                           }).Distinct();
+
+                if (deal.Any())
+                {
+                    foreach (var d in deal)
+                    {
+                        marginTop = marginTop + 50;
+                        e.Graphics.DrawString(d.DEAL_NAME,
+                       new Font("Arial", 12, FontStyle.Regular), Brushes.Black, 50, marginTop);
+                        e.Graphics.DrawString(d.DEAL_PRICE.ToString(),
+                            new Font("Arial", 12, FontStyle.Regular), Brushes.Black, 500, marginTop);
+                        var deal_items = from x in db.DEALS_DETAILs
+                                         join di in db.ITEMS_TBs on x.ITEM_ID equals di.ID
+                                         where x.DEAL_ID == d.ID
+                                         select new { deal_id = x.DEAL_ID, DEAL_ITEM_NAME = di.ITEM_NAME, };
+                        foreach (var itt in deal_items)
+                        {
+                            marginTop = marginTop + 50;
+                            e.Graphics.DrawString("- " + itt.DEAL_ITEM_NAME,
+                                new Font("Arial", 12, FontStyle.Regular), Brushes.Black, 150, marginTop);
+                            e.Graphics.DrawString(d.DEAL_ITEM_QUANTITY.ToString(),
+                                new Font("Arial", 12, FontStyle.Regular), Brushes.Black, 500, marginTop);
+                        }
+                    }
+                }
+                marginTop = marginTop + 50;
+            }
         }
     }
 }

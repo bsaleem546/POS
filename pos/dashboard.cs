@@ -57,6 +57,11 @@ namespace pos
         private void reset()
         {
             label3.Text = "You are logged in as " + Models.Users.NAME;
+            panel1.AutoScroll = false;
+            panel1.HorizontalScroll.Enabled = false;
+            panel1.HorizontalScroll.Visible = false;
+            panel1.HorizontalScroll.Maximum = 0;
+            panel1.AutoScroll = true;
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -105,6 +110,11 @@ namespace pos
         private void discount_btn_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Discount());
+        }
+
+        private void billing_btn_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Billing());
         }
     }
 }

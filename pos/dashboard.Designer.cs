@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.discount_btn = new FontAwesome.Sharp.IconButton();
             this.menus_btn = new FontAwesome.Sharp.IconButton();
             this.deal_btn = new FontAwesome.Sharp.IconButton();
             this.items_btn = new FontAwesome.Sharp.IconButton();
@@ -41,7 +42,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panelHolder = new System.Windows.Forms.Panel();
-            this.discount_btn = new FontAwesome.Sharp.IconButton();
+            this.billing_btn = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -50,6 +51,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.panel1.Controls.Add(this.billing_btn);
             this.panel1.Controls.Add(this.discount_btn);
             this.panel1.Controls.Add(this.menus_btn);
             this.panel1.Controls.Add(this.deal_btn);
@@ -63,6 +65,29 @@
             this.panel1.Size = new System.Drawing.Size(210, 800);
             this.panel1.TabIndex = 0;
             // 
+            // discount_btn
+            // 
+            this.discount_btn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.discount_btn.FlatAppearance.BorderSize = 0;
+            this.discount_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.discount_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.discount_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(255)))), ((int)(((byte)(235)))));
+            this.discount_btn.IconChar = FontAwesome.Sharp.IconChar.Tags;
+            this.discount_btn.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(255)))), ((int)(((byte)(235)))));
+            this.discount_btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.discount_btn.IconSize = 32;
+            this.discount_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.discount_btn.Location = new System.Drawing.Point(0, 376);
+            this.discount_btn.Name = "discount_btn";
+            this.discount_btn.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.discount_btn.Size = new System.Drawing.Size(210, 60);
+            this.discount_btn.TabIndex = 11;
+            this.discount_btn.Text = "Discounts";
+            this.discount_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.discount_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.discount_btn.UseVisualStyleBackColor = true;
+            this.discount_btn.Click += new System.EventHandler(this.discount_btn_Click);
+            // 
             // menus_btn
             // 
             this.menus_btn.Dock = System.Windows.Forms.DockStyle.Top;
@@ -75,7 +100,7 @@
             this.menus_btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.menus_btn.IconSize = 32;
             this.menus_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.menus_btn.Location = new System.Drawing.Point(0, 376);
+            this.menus_btn.Location = new System.Drawing.Point(0, 316);
             this.menus_btn.Name = "menus_btn";
             this.menus_btn.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
             this.menus_btn.Size = new System.Drawing.Size(210, 60);
@@ -98,7 +123,7 @@
             this.deal_btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.deal_btn.IconSize = 32;
             this.deal_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.deal_btn.Location = new System.Drawing.Point(0, 316);
+            this.deal_btn.Location = new System.Drawing.Point(0, 256);
             this.deal_btn.Name = "deal_btn";
             this.deal_btn.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
             this.deal_btn.Size = new System.Drawing.Size(210, 60);
@@ -121,7 +146,7 @@
             this.items_btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.items_btn.IconSize = 32;
             this.items_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.items_btn.Location = new System.Drawing.Point(0, 256);
+            this.items_btn.Location = new System.Drawing.Point(0, 196);
             this.items_btn.Name = "items_btn";
             this.items_btn.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
             this.items_btn.Size = new System.Drawing.Size(210, 60);
@@ -144,7 +169,7 @@
             this.inventory_btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.inventory_btn.IconSize = 32;
             this.inventory_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.inventory_btn.Location = new System.Drawing.Point(0, 196);
+            this.inventory_btn.Location = new System.Drawing.Point(0, 136);
             this.inventory_btn.Name = "inventory_btn";
             this.inventory_btn.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
             this.inventory_btn.Size = new System.Drawing.Size(210, 60);
@@ -167,7 +192,7 @@
             this.user_btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.user_btn.IconSize = 32;
             this.user_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.user_btn.Location = new System.Drawing.Point(0, 136);
+            this.user_btn.Location = new System.Drawing.Point(0, 76);
             this.user_btn.Name = "user_btn";
             this.user_btn.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
             this.user_btn.Size = new System.Drawing.Size(210, 60);
@@ -184,7 +209,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(210, 136);
+            this.panel3.Size = new System.Drawing.Size(210, 76);
             this.panel3.TabIndex = 5;
             // 
             // label1
@@ -256,28 +281,28 @@
             this.panelHolder.Size = new System.Drawing.Size(1070, 740);
             this.panelHolder.TabIndex = 2;
             // 
-            // discount_btn
+            // billing_btn
             // 
-            this.discount_btn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.discount_btn.FlatAppearance.BorderSize = 0;
-            this.discount_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.discount_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.discount_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(255)))), ((int)(((byte)(235)))));
-            this.discount_btn.IconChar = FontAwesome.Sharp.IconChar.Tags;
-            this.discount_btn.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(255)))), ((int)(((byte)(235)))));
-            this.discount_btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.discount_btn.IconSize = 32;
-            this.discount_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.discount_btn.Location = new System.Drawing.Point(0, 436);
-            this.discount_btn.Name = "discount_btn";
-            this.discount_btn.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.discount_btn.Size = new System.Drawing.Size(210, 60);
-            this.discount_btn.TabIndex = 11;
-            this.discount_btn.Text = "Discounts";
-            this.discount_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.discount_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.discount_btn.UseVisualStyleBackColor = true;
-            this.discount_btn.Click += new System.EventHandler(this.discount_btn_Click);
+            this.billing_btn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.billing_btn.FlatAppearance.BorderSize = 0;
+            this.billing_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.billing_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.billing_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(255)))), ((int)(((byte)(235)))));
+            this.billing_btn.IconChar = FontAwesome.Sharp.IconChar.Wallet;
+            this.billing_btn.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(255)))), ((int)(((byte)(235)))));
+            this.billing_btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.billing_btn.IconSize = 32;
+            this.billing_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.billing_btn.Location = new System.Drawing.Point(0, 436);
+            this.billing_btn.Name = "billing_btn";
+            this.billing_btn.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.billing_btn.Size = new System.Drawing.Size(210, 60);
+            this.billing_btn.TabIndex = 12;
+            this.billing_btn.Text = "Billing";
+            this.billing_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.billing_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.billing_btn.UseVisualStyleBackColor = true;
+            this.billing_btn.Click += new System.EventHandler(this.billing_btn_Click);
             // 
             // dashboard
             // 
@@ -318,5 +343,6 @@
         private FontAwesome.Sharp.IconButton deal_btn;
         private FontAwesome.Sharp.IconButton menus_btn;
         private FontAwesome.Sharp.IconButton discount_btn;
+        private FontAwesome.Sharp.IconButton billing_btn;
     }
 }

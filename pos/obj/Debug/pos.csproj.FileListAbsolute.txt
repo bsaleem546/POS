@@ -17,3 +17,5 @@ C:\Users\Pc\Desktop\POS DESKTOP\pos\pos\obj\Debug\pos.Deals.resources
 C:\Users\Pc\Desktop\POS DESKTOP\pos\pos\obj\Debug\RdlCompile.cache
 C:\Users\Pc\Desktop\POS DESKTOP\pos\pos\obj\Debug\RdlCompile.compiled
 C:\Users\Pc\Desktop\POS DESKTOP\pos\pos\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Pc\Desktop\POS DESKTOP\pos\pos\obj\Debug\pos.Discount.resources
+C:\Users\Pc\Desktop\POS DESKTOP\pos\pos\obj\Debug\pos.Billing.resources

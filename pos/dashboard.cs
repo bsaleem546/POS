@@ -64,23 +64,12 @@ namespace pos
             panel1.AutoScroll = true;
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void iconButton1_Click(object sender, EventArgs e)
         {
             OpenChildForm(new AllUsers());
         }
 
         private void label1_Click(object sender, EventArgs e)
-        {
-            currentChildFrom.Close();
-            reset();
-        }
-
-        private void label4_Click(object sender, EventArgs e)
         {
             this.Hide();
             login l = new login();

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.billing_btn = new FontAwesome.Sharp.IconButton();
             this.discount_btn = new FontAwesome.Sharp.IconButton();
             this.menus_btn = new FontAwesome.Sharp.IconButton();
             this.deal_btn = new FontAwesome.Sharp.IconButton();
@@ -38,11 +39,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.panelHolder = new System.Windows.Forms.Panel();
-            this.billing_btn = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -64,6 +62,29 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(210, 800);
             this.panel1.TabIndex = 0;
+            // 
+            // billing_btn
+            // 
+            this.billing_btn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.billing_btn.FlatAppearance.BorderSize = 0;
+            this.billing_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.billing_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.billing_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(255)))), ((int)(((byte)(235)))));
+            this.billing_btn.IconChar = FontAwesome.Sharp.IconChar.Wallet;
+            this.billing_btn.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(255)))), ((int)(((byte)(235)))));
+            this.billing_btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.billing_btn.IconSize = 32;
+            this.billing_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.billing_btn.Location = new System.Drawing.Point(0, 436);
+            this.billing_btn.Name = "billing_btn";
+            this.billing_btn.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.billing_btn.Size = new System.Drawing.Size(210, 60);
+            this.billing_btn.TabIndex = 12;
+            this.billing_btn.Text = "Billing";
+            this.billing_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.billing_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.billing_btn.UseVisualStyleBackColor = true;
+            this.billing_btn.Click += new System.EventHandler(this.billing_btn_Click);
             // 
             // discount_btn
             // 
@@ -227,27 +248,12 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(210, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1070, 60);
             this.panel2.TabIndex = 1;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(255)))), ((int)(((byte)(235)))));
-            this.label4.Location = new System.Drawing.Point(1009, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(28, 27);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "O";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -260,19 +266,6 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "SimplePOS";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(255)))), ((int)(((byte)(235)))));
-            this.label2.Location = new System.Drawing.Point(1041, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(26, 27);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "X";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
             // panelHolder
             // 
             this.panelHolder.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -280,29 +273,6 @@
             this.panelHolder.Name = "panelHolder";
             this.panelHolder.Size = new System.Drawing.Size(1070, 740);
             this.panelHolder.TabIndex = 2;
-            // 
-            // billing_btn
-            // 
-            this.billing_btn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.billing_btn.FlatAppearance.BorderSize = 0;
-            this.billing_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.billing_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.billing_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(255)))), ((int)(((byte)(235)))));
-            this.billing_btn.IconChar = FontAwesome.Sharp.IconChar.Wallet;
-            this.billing_btn.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(255)))), ((int)(((byte)(235)))));
-            this.billing_btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.billing_btn.IconSize = 32;
-            this.billing_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.billing_btn.Location = new System.Drawing.Point(0, 436);
-            this.billing_btn.Name = "billing_btn";
-            this.billing_btn.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.billing_btn.Size = new System.Drawing.Size(210, 60);
-            this.billing_btn.TabIndex = 12;
-            this.billing_btn.Text = "Billing";
-            this.billing_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.billing_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.billing_btn.UseVisualStyleBackColor = true;
-            this.billing_btn.Click += new System.EventHandler(this.billing_btn_Click);
             // 
             // dashboard
             // 
@@ -314,7 +284,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "dashboard";
@@ -331,14 +301,12 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel3;
         private FontAwesome.Sharp.IconButton user_btn;
         private FontAwesome.Sharp.IconButton inventory_btn;
         private System.Windows.Forms.Panel panelHolder;
-        private System.Windows.Forms.Label label4;
         private FontAwesome.Sharp.IconButton items_btn;
         private FontAwesome.Sharp.IconButton deal_btn;
         private FontAwesome.Sharp.IconButton menus_btn;
